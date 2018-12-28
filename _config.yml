@@ -1,6 +1,6 @@
 # Site
 title: Fajar Aziz Laksono
-description: the future is everything to me, even though I realize that I have a time limit
+description: The future is everything to me, even though I realize that I have a time limit
 url: https://fajarlaksono.github.io/
 logo: halve.png                                       # Site logo
 locale: id_ID
@@ -29,15 +29,15 @@ sass:
 #google-analytics: UA-XXXXX-Y
 
 # Social Links
-#email:             email
+email:             fajarazizlaksono@gmail.com
 #google.plus:        username
-twitter:            username
-#facebook:           username
-github:             username
-stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
+twitter:            fjarazizlaksono
+facebook:           fajar.aziz.laksono
+github:             fajarlaksono
+#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
+linkedin:          fajar-aziz-laksono-14a5945b/
 #xing:              username
-#instagram:          username
+instagram:          fjarazizlaksono
 #lastfm:            username
 #tumblr:            username
 #pinterest:         username
@@ -52,7 +52,7 @@ stackoverflow:     123456/username   from a "http://stackoverflow.com/users/1234
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
-behance:           username
+#behance:           username
 
 # Gems
 gems:
