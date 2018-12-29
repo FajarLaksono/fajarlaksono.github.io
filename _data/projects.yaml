@@ -28,22 +28,22 @@
   image: /images/banyu-ikan.png
   completed: true
 
-- title: Sistem Pakar Diagnosis Kerusakan VB6
+- title: Diagnosis Kerusakan VB6
   url: https://github.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6
-  image: https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png
+  image: https://raw.githubusercontent.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6/master/screenshot.PNG
   completed: true
 
 - title: SPK Metode AHP VB.net
   url: https://github.com/FajarLaksono/spk-ahp-vb.net
-  image: https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png
+  image: https://raw.githubusercontent.com/FajarLaksono/spk-ahp-vb.net/master/screenshot.PNG
   completed: true
 
 - title: Peminjaman Uang VB6
-  url: https://github.com/FajarLaksono/PeminjamanUang-VB6
+  url: https://raw.githubusercontent.com/FajarLaksono/PeminjamanUang-VB6/master/screenshot.PNG
   image: /images/peminjamanuang.jpg
   completed: true
 
 - title: Rental Mobil VB6
   url: https://github.com/FajarLaksono/RentalMobil-VB6
-  image: /images/rentalmobil.jpg
+  image: https://raw.githubusercontent.com/FajarLaksono/RentalMobil-VB6/master/screenshot.PNG
   completed: true
