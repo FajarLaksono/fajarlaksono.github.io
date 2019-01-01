@@ -1,29 +1,49 @@
-- title: Halve Jekyll Theme
-  url: http://taylantatli.me/Halve
-  image: http://taylantatli.me/Halve/images/halve-home-image.png
-  completed: false
-
-- title: Moon Jekyll Theme
-  url: http://taylantatli.me/Moon
-  image: https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
+- title: belajarcpp.com
+  url: http://belajarcpp.com/
+  image: /images/belajarcpp.png
   completed: true
 
-- title: Ramme Jekyll Theme
-  url: http://taylantatli.me/Ramme
-  image: https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png
+- title: MyLMS-Laravel
+  url: https://github.com/FajarLaksono/my-lms-laravel
+  image: https://raw.githubusercontent.com/FajarLaksono/my-lms-laravel/master/screenshot.PNG
   completed: true
 
-- title: Daisy Pelican Theme
-  url: http://taylantatli.me/Daisy-Pelican-Theme/
-  image: https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png
+- title: The Dimensions Game
+  url: https://www.indiedb.com/games/the-dimensions-game
+  image: https://media.indiedb.com/cache/images/games/1/35/34998/thumb_620x2000/Penampakan4.png
   completed: true
 
-- title: Block Icon Theme
-  url: https://github.com/TaylanTatli/Block-Icon-Theme
-  image: https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png
-  completed: false
+- title: suryakreasilas.com
+  url: https://suryakreasilas.com
+  image: /images/suryakreasilas.png
+  completed: true
 
-- title: Start Page
-  url: http://taylantatli.me/StartPage/
-  image: https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png
-  completed: false
+- title: pompasatelitda.com
+  url: https://pompasatelitda.com
+  image: /images/pompasatelitda.png
+  completed: true
+
+- title: Banyu Ikan
+  url: https://banyu-ikan.com/download
+  image: /images/banyu-ikan.png
+  completed: true
+
+- title: Diagnosis Kerusakan VB6
+  url: https://github.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6
+  image: https://raw.githubusercontent.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6/master/screenshot.PNG
+  completed: true
+
+- title: SPK Metode AHP VB.net
+  url: https://github.com/FajarLaksono/spk-ahp-vb.net
+  image: https://raw.githubusercontent.com/FajarLaksono/spk-ahp-vb.net/master/screenshot.PNG
+  completed: true
+
+- title: Peminjaman Uang VB6
+  url: https://raw.githubusercontent.com/FajarLaksono/PeminjamanUang-VB6/master/screenshot.PNG
+  image: https://raw.githubusercontent.com/FajarLaksono/PeminjamanUang-VB6/master/screenshot.PNG
+  completed: true
+
+- title: Rental Mobil VB6
+  url: https://github.com/FajarLaksono/RentalMobil-VB6
+  image: https://raw.githubusercontent.com/FajarLaksono/RentalMobil-VB6/master/screenshot.PNG
+  completed: true

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-01T19:42:22+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Halve</title><subtitle>Stylish, Two-Column Jekyll Theme</subtitle><entry><title type="html">More About Me</title><link href="http://localhost:4000/More-About-Me/" rel="alternate" type="text/html" title="More About Me" /><published>2018-12-30T00:00:00+07:00</published><updated>2018-12-30T00:00:00+07:00</updated><id>http://localhost:4000/More%20About%20Me</id><content type="html" xml:base="http://localhost:4000/More-About-Me/">&lt;h2 id=&quot;who-am-i-&quot;&gt;Who am i ?&lt;/h2&gt;
+
+&lt;p&gt;My name is Fajar Aziz Laksono, born on October 19, 2017 in Banyumas, Indonesia, currently living in Bandung Indonesia.&lt;/p&gt;
+
+&lt;p&gt;when I was a child, I fell in love with my first love was technology. what I like about technology is how they can change the world to be more beautiful and simple, for now and in the future.&lt;/p&gt;
+
+&lt;p&gt;I’m also fascinated by future, science, universe and world.&lt;/p&gt;
+
+&lt;p&gt;for me future is everiting to me.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-i-can-falling-in-love-with-tecnology-&quot;&gt;How i can falling in love with tecnology ?&lt;/h2&gt;
+
+&lt;p&gt;When i was a child, i liked to play with toy robots, until i got bored and then i broke them, and modified them with my own ideas. this gives me basic knowlage about Electronics.&lt;/p&gt;
+
+&lt;p&gt;When I was in elementary school, I liked playing video games, until I was bored, and then I tried to crack the game, trying to modify it based on my own desires. it’s happened until junior high school, its give me game development knowledge including 3d model, animation, design and programming.&lt;/p&gt;
+
+&lt;p&gt;then when I was in high school, I tried making my own video game with &lt;a href=&quot;https://unity3d.com/&quot;&gt;Unity3d&lt;/a&gt;, which produced &lt;a href=&quot;https://www.indiedb.com/games/the-dimensions-game&quot;&gt;The Dimensions Game&lt;/a&gt;, it was my first game and the biggest game I have ever made by myself.&lt;/p&gt;
+
+&lt;p&gt;I spent months making it, and made this game with the aim of trying out my abilities at that time. and the result was unexpected that I could build a big game by myself. even though the game failed, many negative feedback for the game i have been received, I had to stop the creation and make the story of the video game not completed. but I am happy to be able to make the game.&lt;/p&gt;
+
+&lt;p&gt;After that I focused on learning more about programming, to refute my expertise. I tried to make many programs that I needed and people asked, also sometimes I became a freelancer making orders from clients, you can see my projects that I have made on the project page in this website.&lt;/p&gt;
+
+&lt;p&gt;When I was in college, I made a website &lt;a href=&quot;www.belajarcpp.com&quot;&gt;belajarcpp.com&lt;/a&gt;, because I saw many new programmers (not yet familiar with programming) in this world misunderstanding C++, they thought that C++ was an old language and people had to leave it to new language like java and others. sentiment continued to spread through the internet, so I was worried about letting it happen.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-fact&quot;&gt;The fact&lt;/h2&gt;
+
+&lt;p&gt;above i said that i am in love with technology, but my passion is future, seeing and building future is my actual passion.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-am-i-doing-&quot;&gt;What am i doing ?&lt;/h2&gt;
+
+&lt;p&gt;Until now i still learning lot and making something for people.
+I do what i can do to help and build great future.&lt;/p&gt;
+
+&lt;h2 id=&quot;education-history&quot;&gt;Education History&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;University BSI Bandung / 2018 - 2019&lt;/li&gt;
+  &lt;li&gt;University BSI Purwokerto / 2015 - 2018&lt;/li&gt;
+  &lt;li&gt;SMK Mulya Husada / 2012 - 2015&lt;/li&gt;
+  &lt;li&gt;SMP N 7 Purwokerto / 2009 - 2012&lt;/li&gt;
+  &lt;li&gt;SD N Ledug Purwokerto / 2003 - 2009&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;skills&quot;&gt;Skills&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Programming&lt;/li&gt;
+  &lt;li&gt;Design Graphic&lt;/li&gt;
+  &lt;li&gt;3D model&lt;/li&gt;
+  &lt;li&gt;writing&lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><category term="About me" /><category term="fajar laksono" /><category term="Fajar Aziz Laksono" /><category term="Bio" /><summary type="html">Who am i ?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/my_photo_2018.jpg" /></entry></feed>
