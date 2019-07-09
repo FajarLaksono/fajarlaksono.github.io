@@ -1,0 +1,300 @@
+#
+# Be aware that even a small syntax error here can lead to failures in output.
+#
+
+sidebar:
+    about: True # set to False or comment line if you want to remove the "how to use?" in the sidebar
+    education: True # set to False if you want education in main section instead of in sidebar
+
+    # Profile information
+    name: Fajar Aziz Laksono
+    tagline: Programmer & Writer
+    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+
+    # Sidebar links
+    email: fajarazizlaksono@gmail.com
+    phone: 0896 6588 8251
+    website: belajarcpp.com #do not add http://
+    linkedin: fajar-laksono-14a5945b
+    github: fajarlaksono
+    gitlab:
+    bitbucket:
+    twitter: '@fajrlaksono'
+    stack-overflow: # Number/Username, e.g. 123456/alandoe
+    codewars:
+    goodreads: # Number-Username, e.g. 123456-alandoe
+
+    languages:
+      - idiom: Indonesia
+        level: Native
+
+      - idiom: English
+        level: Fluent
+
+    interests:
+      - item: Knowledge
+        link:
+
+      - item: Future
+        link:
+
+      - item: Technology
+        link:
+
+career-profile:
+    title: Career Profile
+    summary: | 
+              I've been Learn and Doing Programming for 6 Years working as Freelance, also experience teaching as Instructor Assistant in UBSI Purwokerto for half of year and writing some education article at belajarcpp.com; native in Indonesia and Active in English; Skilled at programming, writing.
+education:
+    - degree: S1 in Sistem Informatika
+      university: BSI University of Bandung
+      time: 2018 - 2019
+      # details: |
+      #  Describe your study here lorem ipsum dolor sit amet, consectetuer
+      #  adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      #  sociis natoque penatibus et magnis dis parturient montes, nascetur
+      #  ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      #  pretium quis, sem.
+
+       #   - Bullet point
+        #  - Bullet point
+
+    - degree: D3 in Management Informatika
+      university: BSI University of Purwokerto
+      time: 2015 - 2018
+      # details: |
+      #  Describe your study here lorem ipsum dolor sit amet, consectetuer
+      #  adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      #  sociis natoque penatibus et magnis dis parturient montes, nascetur
+      #  ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      #  pretium quis, sem.
+
+       #   - Bullet point
+       #   - Bullet point
+
+    - degree: 
+      university: SMK Mulya Husada
+      time: 2012 - 2015
+      # details: |
+      #  Describe your study here lorem ipsum dolor sit amet, consectetuer
+      #  adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      #  sociis natoque penatibus et magnis dis parturient montes, nascetur
+      #  ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      #  pretium quis, sem.
+
+       #   - Bullet point
+       #   - Bullet point
+
+    - degree: 
+      university: SMP N 7 Purwokerto
+      time: 2009 - 2012
+      # details: |
+      #  Describe your study here lorem ipsum dolor sit amet, consectetuer
+      #  adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      #  sociis natoque penatibus et magnis dis parturient montes, nascetur
+      #  ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      #  pretium quis, sem.
+
+       #   - Bullet point
+       #   - Bullet point
+
+    - degree: 
+      university: SD N Ledug Purwokerto
+      time: 2003 - 2009
+      # details: |
+      #  Describe your study here lorem ipsum dolor sit amet, consectetuer
+      #  adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+      #  sociis natoque penatibus et magnis dis parturient montes, nascetur
+      #  ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
+      #  pretium quis, sem.
+
+       #   - Bullet point
+       #   - Bullet point
+
+experiences:
+    - role: Project Leader
+      time: 2016 - Present
+      company: Belajarcpp.com
+      details: |
+                - Founder, created the website and organized all things 
+                - Leading, people who contribute to the website
+                - Programming, Programming, full-stack programmer to manage the website
+                - Design, web and pictures
+                - Write, articles for audience
+
+    - role: Mobile Engineer
+      time: 2019 - 2019
+      company: Atourin
+      details: |
+                - Responsible for the back-end of the App
+                - Made an API in Laravel for the APP
+
+    - role: Instructor Assistant
+      time: 2016 - 2017
+      company: UBSI Purwokerto
+      details: |
+                - Taught and gave instruction to students
+                - Helped instructor
+
+    - role: Freelance Programmer
+      time: 2016 - 2017
+      company: Mitra Mandiri Informatika
+      details: |
+                - Made some programs and record as video tutorials
+projects:
+    title: Projects
+    intro: >
+            In down below is a list of my projects
+
+    assignments:
+      - title: Belajar C++
+        link: https://www.belajarcpp.com
+        tagline: "A place to learn C/C++."
+
+      - title: MyLMS-Laravel
+        link: "https://github.com/FajarLaksono/my-lms-laravel"
+        tagline: "A free Learning Management System using Laravel."
+
+      - title: The Dimensions Game
+        link: "https://www.indiedb.com/games/the-dimensions-game"
+        tagline: "A Horror Game with Indonesian ghost"
+
+      - title: Suryakreasilas,com
+        link: "https://suryakreasilas.com/"
+        tagline: "A company profile built with Wordpress."
+
+      - title: pompasatelitda.com
+        link: "https://pompasatelitda.com/"
+        tagline: "A company profile built with Wordpress."
+
+      - title: Banyu Ikan
+        link: "https://banyu-ikan.com/download"
+        tagline: "An app to help people sell and get fish."
+
+      - title: Sistem Pakar Diagnosa Kerusakan
+        link: "https://github.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6"
+        tagline: "A free project about expert system."
+
+      - title: SPK Metode AHP VB.net
+        link: "https://github.com/FajarLaksono/spk-ahp-vb.net"
+        tagline: "A free project about decision support systems."
+      
+      - title: PeminjamanUang-VB6
+        link: "https://raw.githubusercontent.com/FajarLaksono/PeminjamanUang-VB6"
+        tagline: "A free project about borrowing some money."
+      
+      - title: RentalMobil-VB6
+        link: "https://github.com/FajarLaksono/RentalMobil-VB6"
+        tagline: "A free project about Car rental."
+
+      - title: Run2TouchDown
+        link: "https://play.google.com/store/apps/details?id=run2games.run2TouchDown_1.x0.x0_Android&hl=en"
+        tagline: "A free game in android for killing your time."
+
+publications:
+     title: Certificates
+     intro: |
+             In down below is a list of my Certificates.
+
+     
+     papers:
+      - title: Finalist - The 2013 Game Design Development
+        authors: Certificate of Achievement GAT FESTIFAL Part of Bee Fest 2013
+        conference: School of Computer Science - BINUS UNIVERSITY (2013)
+
+      - title: CCNA Routing and Switching, Introduction to Networks
+        authors: Cisco
+        conference: "(2018)"
+
+      - title: Sertifikat Entrepreneur For ALL
+        authors: Pusat Pengembangan dan Motivasi Entrepreneur UBSI Purwokerto
+        conference: "(2015)"
+
+      - title: C++ Tutorial Course
+        authors: SoloLearn
+        conference: "Credential ID 1051-6795380 (2018)"
+
+      - title: CSS Fundamentals Course
+        authors: Solo Learn
+        conference: "Credential ID 1023-6795380 (2018)"
+
+      - title: HTML Fundamentals Course
+        authors: SoloLearn
+        conference: "Credential ID 1014-6795380 (2018)"
+
+      - title: SQL Fundamentals Course
+        authors: SoloLearn
+        conference: "Credential ID 1060-6795380 (2018)"
+
+skills:
+    title: Skills, Proficiency, &amp; Experiences
+
+    toolset:
+      - name: Programmer
+        level: 90%
+
+      - name: Bahasa Indonesian
+        level: 98%
+
+      - name: English
+        level: 68%
+
+      - name: Writer
+        level: 70%
+
+      - name: C
+        level: 60%
+
+      - name: C++
+        level: 56%
+
+      - name: PHP
+        level: 65%
+
+      - name: SQL
+        level: 60%
+      
+      - name: Wordpress
+        level: 55%
+
+      - name: Laravel
+        level: 53%
+
+      - name: CodeIgniter
+        level: 50%
+
+      - name: VB.NET
+        level: 47%
+
+      - name: VB6
+        level: 30%
+
+      - name: Photoshop
+        level: 62%
+
+      - name: CorelDraw
+        level: 54%
+
+      - name: Blender
+        level: 66%
+
+      - name: Unity3D
+        level: 20%
+
+      - name: Flash
+        level: 69%
+
+      - name: Animation
+        level: 44%
+
+      - name: 3DModel
+        level: 45%
+
+      - name: JavaScript
+        level: 25%
+
+      - name: React Native
+        level: 10%
+
+footer: >
+    CV of Fajar aziz laksono, Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>
