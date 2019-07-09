@@ -3,7 +3,7 @@
 # Site Settings
 title: Fajar Laksono CV
 url: 'https://fajarlaksono.github.io/'
-baseurl: '/online-cv' #change it according to your repository name
+baseurl: '/' #change it according to your repository name
 description: CV of Fajar Laksono
 # Style will be applied only after restarting the build or serve. Just choose one of the options.
 theme_skin: turquoise # blue turquoise green berry orange ceramic
