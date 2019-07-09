@@ -3,9 +3,9 @@ layout: home
 ---
 # About Me
 
-Hallo there, I'm a web developer, software engineer, and writer currently living in Bandung-Purwokerto, Indonesia. 
+Hallo there, I'm a Web Developer, Software Engineer, and Writer currently living in Bandung-Purwokerto, Indonesia. 
 
-My interests range from future to universes. I am also interested in education, technology, and future.
+My passions are to see and knowing future, universes, and technology. I'm also interested in education
 
 Read more about me, [here](/More-About-Me/).
 
