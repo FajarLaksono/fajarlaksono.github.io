@@ -190,6 +190,11 @@ projects:
       - title: Run2TouchDown
         link: "https://play.google.com/store/apps/details?id=run2games.run2TouchDown_1.x0.x0_Android&hl=en"
         tagline: "A free game in android for killing your time."
+        
+      - title: 3D Models in Turbosquid
+        link: "https://www.turbosquid.com/Search/Artists/Fajar-Aziz-laksono"
+        tagline: "My 3D model creativitys that I sell on Internet."
+        
 
 publications:
      title: Certificates
@@ -287,7 +292,7 @@ skills:
       - name: Animation
         level: 44%
 
-      - name: 3DModel
+      - name: 3DArtist
         level: 45%
 
       - name: JavaScript
