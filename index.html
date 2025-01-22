@@ -1,18 +1,84 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1.5em 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 0.5em 0 0;
+            font-size: 1.2em;
+        }
+        section {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+            margin-top: 1.5em;
+        }
+        .project {
+            border: 1px solid #ddd;
+            padding: 1em;
+            border-radius: 5px;
+            background: #fff;
+        }
+        .project h3 {
+            margin: 0 0 0.5em;
+        }
+        footer {
+            margin-top: 2em;
+            padding: 1em 0;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fajar Laksono's Portfolio</h1>
+        <p>Software Engineer | Analytics Engineer | Business Analytics</p>
+    </header>
 
+    <section>
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>A short description of your first project.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>A short description of your second project.</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>A short description of your third project.</p>
+            </div>
+        </div>
+    </section>
 
-{% include career-profile.html %}
-<!-- 
-{% unless site.data.data.sidebar.education %}
-  {% include education.html %}
-{% endunless %} -->
-
-{% include experiences.html %}
-
-{% include projects.html %}
-
-{% include publications.html %}
-
-{% include skills.html %}
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
