@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajar Laksono Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Calibri;
+            background-color: #333333;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .content {
+            background-color: white;
+            color: #000000;
+            padding: 3em;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 5px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0 0 1.5em;
+            font-size: 2.5em;
+        }
+        .input-group {
+            margin: 2em 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+            text-align: left;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 0.8em;
+            font-size: 1em;
+            font-family: Calibri;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #333333;
+        }
+        button {
+            width: 100%;
+            padding: 0.8em;
+            font-size: 1.1em;
+            font-family: Calibri;
+            background-color: #333333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 1em;
+        }
+        button:hover {
+            background-color: #555555;
+        }
+        .error {
+            color: #d32f2f;
+            margin-top: 1em;
+            font-size: 0.95em;
+            display: none;
+        }
+        .hint {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Fajar Laksono Portfolio</h1>
+
+        <div class="input-group">
+            <label for="password">Insert Password:</label>
+            <input type="text" id="password" placeholder="Enter password" autocomplete="off">
+        </div>
+
+        <button onclick="handleSubmit()">Enter</button>
+
+        <div class="error" id="error-message">
+            Incorrect password. Please try again.
+        </div>
+
+        <div class="hint">
+            Please contact me if you don't have the password: <a href="mailto:fajrlaksono@gmail.com" target="_blank">fajrlaksono@gmail.com</a>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('password');
+        const errorMessage = document.getElementById('error-message');
+
+        // Allow Enter key to submit
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                handleSubmit();
+            }
+        });
+
+        function handleSubmit() {
+            const password = input.value.trim().toLowerCase();
+            errorMessage.style.display = 'none';
+
+            const validPasswords = {
+                'data': 'data/index.html',
+                'eng': 'eng/index.html',
+                'pro': 'pro/index.html',
+                'research': 'research/index.html'
+            };
+
+            if (validPasswords[password]) {
+                window.location.href = validPasswords[password];
+            } else {
+                errorMessage.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        }
+    </script>
+</body>
+</html>
