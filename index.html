@@ -72,21 +72,43 @@
   <div class="content">
     <header>
       <h1>Fajar Laksono Portfolio</h1>
-      <p>Central Java, Indonesia • <a href="mailto:fajrlaksono@gmail.com" target="_blank">fajrlaksono@gmail.com</a> • <a href="https://wa.me/+6289665888251" target="_blank">+62 89-6658-88251</a></p>
-      <p><a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank">linkedin.com/in/fajrlaksono/</a> • <a href="https://www.github.com/FajarLaksono" target="_blank">github.com/FajarLaksono</a> • <a href="https://laksonos-note.super.site/" target="_blank">laksonos-note.super.site/</a></p>  
+      <p>Jakarta, Indonesia • <a href="mailto:fajrlaksono@gmail.com" target="_blank">fajrlaksono@gmail.com</a> • 
+      <a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank">linkedin.com/in/fajrlaksono/</a> • <a href="https://www.github.com/FajarLaksono" target="_blank">github.com/FajarLaksono</a></p>  
       <hr>
-      <!-- <p style="background: #333333; color: white;"><b>Download CV:</b> <a style="color: #ffffff;" href="assets/2026-06-21-FajarLaksono-Resume-Pro.pdf">fajar-laksono-Resume.pdf</a> (updated on: 2026-06-21) </p> -->
     </header>
+
+    <section>
+      <div class="center-aligned">
+        <h2>Certifications and Educations</h2>
+      </div>
+      <ul>
+        <li><b><a href="https://www.credly.com/badges/3d4f4f4f-4f4f-4f4f-4f4f-4f4f4f4f4f4f" target="_blank">AWS Certified Solutions Architect - Associate (SAA-C03)</a></b>, 2026 - 2029</li>
+        <li><b>Master of Business Analytics</b>, Universiti Sains Malaysia, 2024 - 2026</li>
+        <li><b>Bachelor of Information System Management</b>, Universitas Bina Sarana Informatika, 2015 - 2019</li>
+      </ul>
+    </section>
 
     <section>
       <div class="center-aligned">
         <h2>Personal Projects</h2>
       </div>
       <ul>
-        <li><b><a href="https://github.com/FajarLaksono/sembada-cloud" target="_blank">Sembada Cloud</a> • June 2026</b>
+        <li><b><a href="https://github.com/FajarLaksono/DocsSearch" target="_blank">DocsSearch - Simple RAG Document Search & Chat</a> • October 2026</b>
+          <ul>
+            <li><u>Description:</u> Built a fully local, free, CPU-friendly document Q&A app: uploads PDF/DOCX/CSV/Excel, chunks and embeds them for semantic search, and answers questions with retrieval-grounded citations — no cloud APIs. Implemented the RAG ingestion pipeline (parse → chunk → embed → ChromaDB → retrieve) behind a FastAPI service with a React frontend.</li>
+            <li><u>Tools:</u> Python, FastAPI, Pydantic, React 19, Vite, sentence-transformers (all-MiniLM-L6-v2, 384-dim), ChromaDB (persistent, cosine), llama-cpp-python + GGUF, pypdf, python-docx, pandas, openpyxl</li>
+          </ul>
+        </li>
+        <li><b><a href="https://github.com/FajarLaksono/sopir" target="_blank">Sopir - SUMO Simulator Drivers Data Platform, AD/ADAS data pipeline validation platform</a> • September 2026</b>
+          <ul>
+            <li><u>Description:</u> End-to-end AD/ADAS validation platform that generates SUMO scenarios, runs headless simulations, scores them against safety metrics, and surfaces prioritised failures — with a Kafka streaming backend for replayable telemetry.</li>
+            <li><u>Tools:</u> Python, FastAPI, SQLAlchemy, PostgreSQL, SUMO/TraCI, Kafka (Redpanda), Avro, PyArrow/Parquet, S3, Streamlit, Plotly, Prometheus, Grafana, Docker, GitHub Actions</li>
+          </ul>
+        </li>
+        <li><b><a href="https://github.com/FajarLaksono/sembada-cloud" target="_blank">Sembada Cloud- Cloud Resource and Cost Prediction using Machine Learning and Deep Learning</a> • June 2026</b>
           <ul>
             <li><u>Description:</u> Cloud resource and cost prediction using machine learning and deep learning, following CRISP-ML(Q) and CAMS DevOps. Part of a master's thesis.</li>
-            <li><u>Tools:</u> Python 3.13, scikit-learn, XGBoost, TensorFlow/Keras, DuckDB, SHAP.</li>
+            <li><u>Tools:</u> Python, scikit-learn, XGBoost, TensorFlow/Keras, DuckDB, SHAP.</li>
           </ul>
         </li>
         <li><b><a href="https://github.com/FajarLaksono/ai-neuro-EEG-ds002778-analysis" target="_blank">AI-Neuroscience: EEG-Based Parkinson's Disease Classification</a> • Mar 2026</b>
@@ -113,19 +135,25 @@
             <li><u>Tools:</u> Python, Gemini</li>
           </ul>
         </li>
-        <li><b><a href="https://github.com/FajarLaksono/analytics/blob/main/2025-02-17-3-sleep-health-and-digital-screen-exposure-dataset/eye-health-analysis.ipynb" target="_blank">Eye Health Analysis and Machine Learning Models Selection</a> • Feb 2024</b>
+        <li><b><a href="https://github.com/FajarLaksono/analytics/blob/main/20250217-sleep-health-and-digital-screen-exposure-dataset/eye-health-analysis.ipynb" target="_blank">Eye Health Analysis and Machine Learning Models Selection</a> • Feb 2024</b>
           <ul>
             <li><u>Description:</u> Analyzing Eye health from people behavior data sets, and Machine learning model selection.</li>
             <li><u>Tools:</u> Python, Pandas, Numpy, matplotlib, shap, sklearn, DecisionTrees, RandomForests, LogisticRegression, NaiveBayes, GradientBoostingMachines, XGBoost, AdaBoost, SupportVectorMachines, KNearestNeighbor</li>
           </ul>
         </li>
-        <li><b><a href="https://github.com/FajarLaksono/analytics/tree/main/2024-11-24-1-data-professional-survey" target="_blank">Data Profession Survey Analysis with Power BI</a> • Jan 2024</b>
+        <li><b><a href="https://github.com/FajarLaksono/analytics/tree/main/20241124-data-professional-survey" target="_blank">Data Profession Survey Analysis with Power BI</a> • Jan 2024</b>
           <ul>
             <li><u>Description:</u> Translating a raw data of Data Profession Survey into a useful insight for everyone, I managed to get its favorite programming languages, roles, industry, and salary from 630 survey takers.</li>
             <li><u>Tools:</u> Power BI</li>
           </ul>
         </li>
-        <li><b><a href="https://github.com/FajarLaksono/analytics/tree/main/2024-12-12-2-financial-transactions-analysis-and-prediction" target="_blank">Card and Fraud transaction analysis and prediction with Machine Learning</a> • Jan 2024</b>
+        <li><b><a href="https://github.com/FajarLaksono/analytics/tree/main/20250531-taiwanese-credit-card-default-data-analysis" target="_blank">Taiwanese Credit Card Default Data Analysis</a> • May 2025</b>
+          <ul>
+            <li><u>Description:</u> Analyzing Taiwanese credit card default data to identify patterns and risk factors.</li>
+            <li><u>Tools:</u> Power BI</li>
+          </ul>
+        </li>
+        <li><b><a href="https://github.com/FajarLaksono/analytics/tree/main/20241212-financial-transactions-analysis-and-prediction" target="_blank">Card and Fraud transaction analysis and prediction with Machine Learning</a> • Jan 2024</b>
           <ul>
             <li><u>Description:</u> Translating a raw data of Card Transaction into a useful insight, and detecting Fraudulent transaction with Machine Learning.</li>
             <li><u>Tools:</u> PowerBI, python, sklearn:RandomForestClassifier, pandas, matplotlib</li>
@@ -191,7 +219,7 @@
         <h2>Professional Projects</h2>
       </div>
       <ul>
-        <li><b><a href="https://shieldbase.ai/" target="_blank">Shieldbase AI</a> • 2026</b>
+        <li><b><a href="https://shieldbase.ai/" target="_blank">Shieldbase AI</a> • 2025-2026</b>
           <ul>
             <li><u>Description:</u> AI-driven platform focused on intelligent automation and data-informed decision making. As Technical Product Lead, I owned the end-to-end product lifecycle, ensuring alignment between business objectives, technical architecture, and delivery execution.</li>
             <li><u>Significant Impacts:</u>
@@ -353,19 +381,12 @@
 
     <section>
       <div class="center-aligned">
-        <h2>Publications</h2>
+        <h2>Publications and Patents</h2>
       </div>
       <ul>
-        <li><b>Analisis Kepuasan Pengguna Youtube Sebagai Media Pendidikan Menggunakan Model DeLone Dan McLean</b>, E-ISSN:2685-6964 • Aug 15, 2019</li>
-      </ul>
-    </section>
-
-    <section>
-      <div class="center-aligned">
-        <h2>Patents</h2>
-      </div>
-      <ul>
-        <li><b>Learning Management System Web Based Application For Computer Science</b>, ID 000146700 • Issued Oct 1, 2018</li>
+        <li><b><a href="https://hdl.handle.net/20.500.14536/7751" target="_blank">Predictive Analysis of Cloud Resource Utilization and Cost Optimization Using Machine Learning on Azure VM Traces (Preprint)</a></b>, <a href="http://dx.doi.org/10.12785/ijcds" target="_blank">http://dx.doi.org/10.12785/ijcds</a> • Aug 18, 2026</li>
+        <li><b><a href="https://ejurnal.ars.ac.id/index.php/jti/article/view/64" target="_blank">Analisis Kepuasan Pengguna Youtube Sebagai Media Pendidikan Menggunakan Model DeLone Dan McLean</a></b>, E-ISSN:2685-6964 • Aug 15, 2019</li>
+        <li><b><a href="https://repository.bsi.ac.id/repo/19560/Learning-Management-System-Web-Based-Application-For--Computer-Science" target="_blank">Learning Management System Web Based Application For Computer Science</a></b>, ID 000146700 • Issued Oct 1, 2018</li>
       </ul>
     </section>
 
@@ -374,6 +395,11 @@
         <h2>Trainings and Seminars</h2>
       </div>
       <ul>
+        <li><b>Building with the Claude API</b>, Issued by Anthropic • Mar 2026</li>
+        <li><b>Introduction to Model Context Protocol</b>, Issued by Anthropic • Mar 2026</li>
+        <li><b>Claude Code in Action</b>, Issued by Anthropic • Mar 2026</li>
+        <li><b>Certificate of completion: Introduction to agent skills</b>, Issued by Anthropic • Mar 2026</li>
+        <li><b>Guest Lecture on Analytics Edge</b>, Issued by Universiti Sains Malaysia • Jan 2025</li>
         <li><b>Application of Power BI in Finance and Accounting Analytics</b>, Issued by Universiti Sains Malaysia • Nov 2024</li>
         <li><b>Essential Statistics for Research: A Practical Approach to Data Analysis</b>, Issued by Universiti Sains Malaysia • Nov 2024</li>
         <li><b>Introduction to Business Analytics on Udemy</b>, Issued by 365 Careers • Sep 2024</li>
