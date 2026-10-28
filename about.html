@@ -105,8 +105,117 @@
             -webkit-text-fill-color: transparent;
             animation: gradientMove 6s ease-in-out infinite;
         }
+        .profile-metrics .profile-metric {
+            border-color: rgba(51, 65, 85, 0.8);
+            background: rgba(17, 23, 38, 0.72);
+            animation: metric-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+            transition:
+                border-color 220ms ease,
+                background-color 220ms ease,
+                box-shadow 220ms ease,
+                translate 220ms ease;
+        }
+        .profile-metrics .profile-metric:nth-child(2) { animation-delay: 70ms; }
+        .profile-metrics .profile-metric:nth-child(3) { animation-delay: 140ms; }
+        .profile-metrics .profile-metric:nth-child(4) { animation-delay: 210ms; }
+        .profile-metrics .profile-metric:nth-child(5) { animation-delay: 280ms; }
+        .profile-metrics .profile-metric:hover {
+            translate: 0 -3px;
+            border-color: rgba(0, 102, 255, 0.55);
+            background: rgba(17, 23, 38, 0.95);
+            box-shadow: 0 10px 28px rgba(0, 102, 255, 0.09);
+        }
+        .profile-metrics .profile-metric-value {
+            transition: color 220ms ease;
+        }
+        .profile-metrics .profile-metric:hover .profile-metric-value {
+            color: #00F0FF;
+        }
+        @keyframes metric-enter {
+            from {
+                opacity: 0;
+                translate: 0 10px;
+            }
+            to {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .profile-metrics .profile-metric,
+            .profile-metrics .profile-metric-value {
+                animation: none;
+                transition: none;
+            }
+            .profile-metrics .profile-metric:hover {
+                translate: none;
+            }
+        }
+        .certificates-grid .certificate-card,
+        .skills-grid .skill-card {
+            border-color: rgba(51, 65, 85, 0.8);
+            background: rgba(17, 23, 38, 0.62);
+            transition:
+                border-color 220ms ease,
+                background-color 220ms ease,
+                box-shadow 220ms ease,
+                translate 220ms ease;
+        }
+        .certificates-grid .certificate-card:hover,
+        .skills-grid .skill-card:hover {
+            translate: 0 -3px;
+            border-color: rgba(0, 102, 255, 0.55);
+            background: rgba(17, 23, 38, 0.9);
+            box-shadow: 0 12px 30px rgba(0, 102, 255, 0.08);
+        }
+        .certificate-card {
+            animation: metric-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+        }
+        .certificate-card:nth-child(2) { animation-delay: 100ms; }
+        .skill-card {
+            animation: metric-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+        }
+        .skill-card:nth-child(2) { animation-delay: 60ms; }
+        .skill-card:nth-child(3) { animation-delay: 120ms; }
+        .skill-card:nth-child(4) { animation-delay: 180ms; }
+        .skill-card:nth-child(5) { animation-delay: 240ms; }
+        .skill-card:nth-child(6) { animation-delay: 300ms; }
+        .skill-card:nth-child(7) { animation-delay: 360ms; }
+        .skill-card:nth-child(8) { animation-delay: 420ms; }
+        .skill-card:nth-child(9) { animation-delay: 480ms; }
+        .skill-chip {
+            border: 1px solid rgba(51, 65, 85, 0.8);
+            border-radius: 0.375rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.35rem 0.6rem;
+            color: #cbd5e1;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            transition:
+                border-color 180ms ease,
+                color 180ms ease,
+                background-color 180ms ease;
+        }
+        .skill-chip:hover {
+            border-color: rgba(0, 240, 255, 0.45);
+            background: rgba(0, 102, 255, 0.1);
+            color: #a5f3fc;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .certificates-grid .certificate-card,
+            .skills-grid .skill-card,
+            .skill-chip {
+                animation: none;
+                transition: none;
+            }
+            .certificates-grid .certificate-card:hover,
+            .skills-grid .skill-card:hover {
+                translate: none;
+            }
+        }
         #experience {
-            background: rgba(2, 6, 23, 0.3);
+            background: rgba(0, 0, 0, 0.3);
             border-color: rgba(30, 41, 59, 0.8);
             color: #cbd5e1;
         }
@@ -248,18 +357,26 @@
             <!-- Typography-based Logo -->
             <a href="#" class="flex items-center space-x-2 group">
                 <span class="font-mono text-base tracking-widest text-slate-400 group-hover:text-white transition-colors duration-200">
-                    <span class="text-techBlue font-bold bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient">FAJAR LAKSONO</span>
+                    <span class="text-techBlue font-bold bg-gradient-to-r from-white via-techCyan to-techBlue animate-gradient">FAJAR LAKSONO</span>
                 </span>
             </a>
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex space-x-8 text-base font-medium">
-                <a href="#hero" class="text-slate-400 hover:text-white transition-colors duration-200">Summary</a>
-                <a href="#experience" class="text-slate-400 hover:text-white transition-colors duration-200">Experience</a>
+                <a href="#hero" class="text-slate-400 hover:text-white transition-colors duration-200">Prompt</a>
+                <a href="https://laksonos-note.super.site/" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-200">Blog</a>
                 <a href="#capabilities" class="text-slate-400 hover:text-white transition-colors duration-200">Projects</a>
-                <a href="#credentials" class="text-slate-400 hover:text-white transition-colors duration-200">Skills</a>
-                <a href="#terminal" class="text-slate-400 hover:text-white transition-colors duration-200">Education</a>
+                <a href="#terminal" class="text-slate-400 hover:text-white transition-colors duration-200">About</a>
             </nav>
+
+            <!-- Availability Status Indicator Badge & CTA -->
+            <!-- <div class="flex items-center space-x-4">
+                
+                <a href="#terminal" class="hidden sm:inline-flex items-center space-x-2 bg-techBlue hover:bg-blue-700 text-white text-xs font-mono tracking-wider font-semibold uppercase px-4 py-2 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.4)]">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                    <span>Contact Me</span>
+                </a>
+            </div> -->
         </div>
     </header>
 
@@ -299,33 +416,51 @@
                 Led a 9-person team shipping RAG products at Shieldbase AI; previously owned 10+ backend services at AccelByte supporting 8+ AAA game studios, cutting operational costs by ~40% and improving team workflow efficiency by ~90%. Owned 2 certifications; AWS Certified AI Practitioner (AIF-C01) and AWS Certified Solutions Architect – Associate (SAA-C03). 
             </p>
 
-            <dl class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
-                <div class="flex h-full min-h-0 flex-col items-center rounded-xl border border-border bg-card px-4 py-5 text-center sm:px-5 sm:py-6">
-                    <dt class="flex min-h-[2.5rem] shrink-0 items-end justify-center px-1 text-center text-[11px] font-medium uppercase leading-snug tracking-wide text-muted-foreground sm:min-h-[2.75rem] sm:text-xs">Experience</dt>
-                    <dd class="mt-3 text-2xl font-bold tabular-nums tracking-tight text-foreground">6+</dd>
-                    <dd class="mt-2.5 text-xs leading-relaxed text-muted-foreground">years</dd>
+            <dl class="profile-metrics mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Experience</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">6+</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">years</dd>
                 </div>
-                <div class="flex h-full min-h-0 flex-col items-center rounded-xl border border-border bg-card px-4 py-5 text-center sm:px-5 sm:py-6">
-                    <dt class="flex min-h-[2.5rem] shrink-0 items-end justify-center px-1 text-center text-[11px] font-medium uppercase leading-snug tracking-wide text-muted-foreground sm:min-h-[2.75rem] sm:text-xs">Programming</dt>
-                    <dd class="mt-3 text-2xl font-bold tabular-nums tracking-tight text-foreground">4</dd>
-                    <dd class="mt-2.5 text-xs leading-relaxed text-muted-foreground">Python · Go · C/C++ · PHP</dd>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Programming</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">4</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">Python · Go · C/C++ · PHP</dd>
                 </div>
-                <div class="flex h-full min-h-0 flex-col items-center rounded-xl border border-border bg-card px-4 py-5 text-center sm:px-5 sm:py-6">
-                    <dt class="flex min-h-[2.5rem] shrink-0 items-end justify-center px-1 text-center text-[11px] font-medium uppercase leading-snug tracking-wide text-muted-foreground sm:min-h-[2.75rem] sm:text-xs">Certifications</dt>
-                    <dd class="mt-3 text-2xl font-bold tabular-nums tracking-tight text-foreground">2</dd>
-                    <dd class="mt-2.5 text-xs leading-relaxed text-muted-foreground">SAA-C03 · AIF-C01</dd>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Certifications</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">3</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">SAA-C03 · AIF-C01 · CCNA</dd>
                 </div>
-                <div class="flex h-full min-h-0 flex-col items-center rounded-xl border border-border bg-card px-4 py-5 text-center sm:px-5 sm:py-6">
-                    <dt class="flex min-h-[2.5rem] shrink-0 items-end justify-center px-1 text-center text-[11px] font-medium uppercase leading-snug tracking-wide text-muted-foreground sm:min-h-[2.75rem] sm:text-xs">Skills</dt>
-                    <dd class="mt-3 text-2xl font-bold tabular-nums tracking-tight text-foreground">3</dd>
-                    <dd class="mt-2.5 text-xs leading-relaxed text-muted-foreground">BE, AI, Data</dd>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Skills</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">3</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">BE · AI · Data</dd>
                 </div>
-                <div class="flex h-full min-h-0 flex-col items-center rounded-xl border border-border bg-card px-4 py-5 text-center sm:px-5 sm:py-6 col-span-2 sm:col-span-2 lg:col-span-1">
-                    <dt class="flex min-h-[2.5rem] shrink-0 items-end justify-center px-1 text-center text-[11px] font-medium uppercase leading-snug tracking-wide text-muted-foreground sm:min-h-[2.75rem] sm:text-xs">Languages</dt>
-                    <dd class="mt-3 text-2xl font-bold tabular-nums tracking-tight text-foreground">2</dd>
-                    <dd class="mt-2.5 text-xs leading-relaxed text-muted-foreground w-full max-w-[16rem] sm:max-w-none">Indonesian, English</dd>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Languages</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">2</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">Indonesian · English</dd>
                 </div>
             </dl>
+        </div>
+
+        <!-- Call-to-actions -->
+        <div class="mt-12">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto bg-techBlue hover:bg-blue-600 text-white font-mono text-sm font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.3)] hover:shadow-[0_0_30px_rgba(0,102,255,0.6)] flex items-center justify-center space-x-2">
+                    <span>See Projects</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#capabilities" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>See Blog</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#capabilities" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>See Prompt</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -708,764 +843,199 @@
 })();
 </script>
 
-    <!-- The Build Log (Project Timeline) -->
-    <section id="projects" class="py-24 px-4 bg-slate-950/30 border-b border-slate-800/60 relative">
-        <div class="max-w-7xl mx-auto">
-
-            <!-- Header -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <!-- Certificates -->
+    <section id="certificates" class="relative border-t border-border border-b border-slate-800/60 bg-slate-950/30 px-4 py-20 md:py-24">
+        <div class="mx-auto max-w-7xl">
+            <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                    <span class="text-xs font-mono tracking-widest text-techBlue uppercase block mb-2">// TIMELINE TRACK</span>
-                    <h2 class="text-3xl font-bold tracking-tight text-white">Build Log — Complete Project Timeline</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Certificates</h2>
                 </div>
-                <p class="text-slate-400 max-w-md text-sm mt-4 md:mt-0 leading-relaxed font-mono">
-                    Full chronological catalog across professional platforms, personal research, and legacy builds.
-                </p>
             </div>
 
-            <!-- Shared Filter Bar -->
-            <div class="flex flex-wrap items-center gap-2 mb-12" id="filter-bar">
-                <button data-filter="all" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200 active">All</button>
-                <button data-filter="Backend" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Backend</button>
-                <button data-filter="API" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">API</button>
-                <button data-filter="Cloud" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Cloud</button>
-                <button data-filter="DevOps" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">DevOps</button>
-                <button data-filter="Microservices" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Microservices</button>
-                <button data-filter="Infrastructure" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Infrastructure</button>
-                <button data-filter="Data" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Data</button>
-                <button data-filter="Analytics" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Analytics</button>
-                <button data-filter="ML" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">ML</button>
-                <button data-filter="AI" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">AI</button>
-                <button data-filter="Real-time" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Real-time</button>
-                <button data-filter="Healthcare" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Healthcare</button>
-                <button data-filter="Finance" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Finance</button>
-                <button data-filter="SaaS" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">SaaS</button>
-                <button data-filter="FinOps" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">FinOps</button>
-                <button data-filter="Leadership" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Leadership</button>
-                <button data-filter="Research" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Research</button>
-                <button data-filter="Game" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Game</button>
-                <button data-filter="Web" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Web</button>
-                <button data-filter="Others" class="filter-bubble px-3 py-1.5 rounded-full border text-xs font-mono transition-all duration-200">Others</button>
+            <div class="certificates-grid grid gap-5 md:grid-cols-2">
+                <article class="certificate-card rounded-xl border p-6 sm:p-7">
+                    <div class="flex items-start gap-4">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-techCyan/30 bg-techCyan/10 text-techCyan">
+                            <i data-lucide="badge-check" class="h-6 w-6"></i>
+                        </span>
+                        <div class="min-w-0">
+                            <span class="font-mono text-[11px] uppercase tracking-wider text-techCyan">AWS CERTIFIED</span>
+                            <h3 class="mt-2 text-lg font-semibold leading-snug text-white">Solutions Architect — Associate</h3>
+                            <p class="mt-1 font-mono text-sm text-slate-400">SAA-C03</p>
+                            <p class="mt-4 border-t border-slate-800/80 pt-4 font-mono text-xs text-slate-500">VALID SEP 2026 — SEP 2029</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="certificate-card rounded-xl border p-6 sm:p-7">
+                    <div class="flex items-start gap-4">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-techCyan/30 bg-techCyan/10 text-techCyan">
+                            <i data-lucide="badge-check" class="h-6 w-6"></i>
+                        </span>
+                        <div class="min-w-0">
+                            <span class="font-mono text-[11px] uppercase tracking-wider text-techCyan">AWS CERTIFIED</span>
+                            <h3 class="mt-2 text-lg font-semibold leading-snug text-white">AI Practitioner</h3>
+                            <p class="mt-1 font-mono text-sm text-slate-400">AIF-C01</p>
+                            <p class="mt-4 border-t border-slate-800/80 pt-4 font-mono text-xs text-slate-500">VALID OCT 2026 — OCT 2029</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="certificate-card rounded-xl border p-6 sm:p-7">
+                    <div class="flex items-start gap-4">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-techCyan/30 bg-techCyan/10 text-techCyan">
+                            <i data-lucide="badge-check" class="h-6 w-6"></i>
+                        </span>
+                        <div class="min-w-0">
+                            <span class="font-mono text-[11px] uppercase tracking-wider text-techCyan">CISCO CERTIFIED</span>
+                            <h3 class="mt-2 text-lg font-semibold leading-snug text-white">CCNA Routing and Switching, Introduction to Network</h3>
+                            <p class="mt-1 font-mono text-sm text-slate-400">CCNA 200-301</p>
+                            <p class="mt-4 border-t border-slate-800/80 pt-4 font-mono text-xs text-slate-500">VALID FEB 2018 — FEB 2021</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="relative border-b border-slate-800/60 px-4 py-20 md:py-24 bg-black">
+        <div class="mx-auto max-w-7xl">
+            <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills &amp; Technologies</h2>
+                </div>
             </div>
 
-<style>
-.filter-bubble { border-color: #1e293b; color: #94a3b8; background: transparent; cursor: pointer; }
-.filter-bubble:hover { border-color: #334155; color: #cbd5e1; }
-.filter-bubble.active { border-color: #0066FF; background: rgba(0,102,255,0.10); color: #00F0FF; }
-</style>
+            <div class="skills-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="code-2" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Software Engineering</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">Python</span><span class="skill-chip">C/C++</span><span class="skill-chip">Go</span><span class="skill-chip">PHP</span>
+                    </div>
+                </article>
 
-            <!-- Professional Section Header -->
-            <div class="flex items-center space-x-3 mb-8">
-                <span class="h-px flex-1 bg-gradient-to-r from-techBlue/60 to-transparent"></span>
-                <span class="text-xs font-mono tracking-widest text-techCyan uppercase">Professional</span>
-                <span class="h-px flex-1 bg-gradient-to-l from-techBlue/60 to-transparent"></span>
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="cloud" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Cloud Services</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">AWS</span><span class="skill-chip">EKS</span><span class="skill-chip">EC2</span><span class="skill-chip">Lambda</span><span class="skill-chip">S3</span><span class="skill-chip">CloudWatch</span><span class="skill-chip">EventBridge</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="workflow" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">CI/CD</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">GitHub Actions</span><span class="skill-chip">GitLab CI</span><span class="skill-chip">Jenkins</span><span class="skill-chip">AWS CodePipeline</span><span class="skill-chip">Makefiles</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="database" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Databases &amp; Messaging</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">PostgreSQL</span><span class="skill-chip">MySQL</span><span class="skill-chip">MongoDB</span><span class="skill-chip">Elasticsearch</span><span class="skill-chip">Redis</span><span class="skill-chip">Kafka</span><span class="skill-chip">Milvus</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="activity" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Observability</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">Prometheus</span><span class="skill-chip">Grafana</span><span class="skill-chip">CloudWatch</span><span class="skill-chip">SLOs</span><span class="skill-chip">SLIs</span><span class="skill-chip">Error budgets</span><span class="skill-chip">Alerting</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="shield-check" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Reliability</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">Automated testing</span><span class="skill-chip">Incident management</span><span class="skill-chip">Runbooks</span><span class="skill-chip">Postmortems</span><span class="skill-chip">24×7 on-call</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="boxes" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Containers &amp; Orchestration</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">Kubernetes</span><span class="skill-chip">Docker</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="lock-keyhole" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">Security &amp; Compliance</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">OAuth</span><span class="skill-chip">JWT</span><span class="skill-chip">RBAC</span><span class="skill-chip">IAM</span><span class="skill-chip">OWASP</span><span class="skill-chip">GDPR</span><span class="skill-chip">Infrastructure audit trails</span>
+                    </div>
+                </article>
+
+                <article class="skill-card rounded-xl border p-5 sm:p-6">
+                    <div class="mb-4 flex items-center gap-3 border-b border-slate-800/80 pb-4">
+                        <i data-lucide="bot" class="h-5 w-5 text-techCyan"></i>
+                        <h3 class="font-mono text-sm font-semibold text-white">AI &amp; Agentic Systems</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip">CrewAI</span><span class="skill-chip">LangChain</span><span class="skill-chip">mem0ai</span><span class="skill-chip">Ollama</span><span class="skill-chip">Claude Code</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educations -->
+    <section id="Educations" class="relative border-t border-border border-b border-slate-800/60 bg-slate-950/30 px-4 py-20 md:py-24">
+        <div class="mx-auto max-w-7xl">
+            <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Educations</h2>
+                </div>
             </div>
 
-            <!-- Professional Timeline -->
-            <div class="relative mb-20">
-                <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-techBlue via-techBlue/40 to-transparent"></div>
+            <div class="certificates-grid grid gap-5 md:grid-cols-2">
+                <article class="certificate-card rounded-xl border p-6 sm:p-7">
+                    <div class="flex items-start gap-4">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-techCyan/30 bg-techCyan/10 text-techCyan">
+                            <i data-lucide="graduation-cap" class="h-6 w-6"></i>
+                        </span>
+                        <div class="min-w-0">
+                            <h3 class="mt-2 text-lg font-semibold leading-snug text-white">Master's degree, Business Analytics</h3>
+                            <p class="mt-1 font-mono text-sm text-slate-400">Universiti Sains Malaysia</p>
+                            <p class="mt-4 border-t border-slate-800/80 pt-4 font-mono text-xs text-slate-500">OCT 2024 — AUG 2026</p>
+                        </div>
+                    </div>
+                </article>
 
-                <!-- 01 Shieldbase AI -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Infrastructure AI SaaS Leadership API">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2026</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <a href="https://shieldbase.ai/" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Shieldbase AI <span class="text-slate-500 font-mono text-sm font-normal">/ Technical Product Lead</span></h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            AI-driven platform for intelligent automation and data-informed decisions. Owned end-to-end product lifecycle aligning business, architecture, and delivery.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">AI/ML</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">AWS/GCP</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">DOCKER</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">K8S</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://shieldbase.ai/" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>PLATFORM</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
+                <article class="certificate-card rounded-xl border p-6 sm:p-7">
+                    <div class="flex items-start gap-4">
+                        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-techCyan/30 bg-techCyan/10 text-techCyan">
+                            <i data-lucide="graduation-cap" class="h-6 w-6"></i>
+                        </span>
+                        <div class="min-w-0">
+                            <h3 class="mt-2 text-lg font-semibold leading-snug text-white">Bachelor’s degree, Information System</h3>
+                            <p class="mt-1 font-mono text-sm text-slate-400">Universitas Bina Sarana Informatika</p>
+                            <p class="mt-4 border-t border-slate-800/80 pt-4 font-mono text-xs text-slate-500">Oct 2015 - Aug 2019 </p>
                         </div>
                     </div>
-                </div>
-
-                <!-- 02 AccelByte Intelligence -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Data Infrastructure Cloud Microservices Analytics Game DevOps">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2023–2024</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <a href="https://accelbyte.io/intelligence-service" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">AccelByte Intelligence Service</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Data ecosystem for game analytics and insights. Owned data pipelines, customer-driven analysis, and R&D from early stages.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">MONGODB</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">POSTGRESQL</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">KAFKA</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">GRAFANA</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://accelbyte.io/intelligence-service" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>PLATFORM</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 03 AccelByte Dev Toolkit -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Infrastructure Cloud Microservices API Game">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2021–2024</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <a href="https://accelbyte.io/accelbyte-development-toolkit" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">AccelByte Development Toolkit</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Backend ecosystem for game development workflows. Owned 10+ backend services and 2 CLI/SDK apps with high stability.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">GO</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">JAVA</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">C++</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">K8S</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://accelbyte.io/accelbyte-development-toolkit" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>PLATFORM</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 04 AccelByte Publishing -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Infrastructure Cloud Microservices API Game">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2022–2024</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <a href="https://accelbyte.io/distribution/" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">AccelByte Publishing Toolkits</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Backend ecosystem supporting game publishing workflows. Owned two services and one CLI tool for publishing reliability.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">GO</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">JAVA</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">MONGODB</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">K8S</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://accelbyte.io/distribution/" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>PLATFORM</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 05 CDN Optimization -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Infrastructure Cloud FinOps Research DevOps">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2022</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <a href="https://accelbyte.io/" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">CDN &amp; Storage Cost Optimization (R&amp;D)</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Company-wide cost optimization evaluating alternative CDN/storage providers. Achieved ~40% cost reduction adopted across products.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">GO</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">S3</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">CLOUDFRONT</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">AKAMAI</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://accelbyte.io/" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REFERENCE</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 06 Agate PopQuest -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Game Web">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2020–2021</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <a href="https://agatelevelup.com/turnkey/popquest-trivia-game/" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Agate PopQuest Trivia Game</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Gamification project at Agate. Built backend services and an internal admin portal to support game operations.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">C# (.NET)</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">REACT</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://agatelevelup.com/turnkey/popquest-trivia-game/" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>GAME</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 07 AGO Management -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Web">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2019–2020</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Attorney General — Management System</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Government management system for the Office of the Attorney General of Indonesia. Delivered on schedule with stakeholder alignment.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PHP</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">LARAVEL</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">BOOTSTRAP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 08 Freelance -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Web">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016–2019</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-700/40 bg-emerald-900/20 text-emerald-400">PROFESSIONAL</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Freelance Web Development</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            University-era freelance projects building websites for small businesses, establishing their online presence and basic operations.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PHP</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">LARAVEL</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">WORDPRESS</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Personal Section Header -->
-            <div class="flex items-center space-x-3 mb-8">
-                <span class="h-px flex-1 bg-gradient-to-r from-techBlue/60 to-transparent"></span>
-                <span class="text-xs font-mono tracking-widest text-techCyan uppercase">Personal &amp; Legacy</span>
-                <span class="h-px flex-1 bg-gradient-to-l from-techBlue/60 to-transparent"></span>
-            </div>
-
-            <!-- Personal Timeline -->
-            <div class="relative mb-12">
-                <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-techBlue via-techBlue/40 to-transparent"></div>
-
-                <!-- P01 Sembada Cloud -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="ML Data Infrastructure Cloud Research FinOps">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Jun 2026</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-amber-700/40 bg-amber-900/20 text-amber-400">RESEARCH</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/sembada-cloud" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Sembada Cloud <span class="text-slate-500 font-mono text-sm font-normal">/ Master's Thesis</span></h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Cloud resource and cost prediction with ML/DL following CRISP-ML(Q) and CAMS DevOps methodology. Master's thesis project.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON 3.13</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SCIKIT-LEARN</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">XGBOOST</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">TENSORFLOW</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">DUCKDB</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/sembada-cloud" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P02 EEG Parkinson's -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="ML AI Data Healthcare Research">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Mar 2026</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/ai-neuro-EEG-ds002778-analysis" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">AI-Neuro: EEG Parkinson's Classifier</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Classifying Parkinson's Disease from EEG signals using OpenNeuro ds002778. Preprocessing, feature extraction, and ML model selection.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">MNE-PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SKLEARN</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">NUMPY</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/ai-neuro-EEG-ds002778-analysis" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P03 Alzheimer's MRI -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="ML Data Healthcare Research">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Mar 2026</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/analytics/blob/main/20260309-MRI-and-Alzheimers/Notebooks/data-analysis_v1.ipynb" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Alzheimer's MRI Prediction</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Analyzing and predicting Alzheimer's conversion from medical checkup data with machine learning model selection.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SKLEARN</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">LOGISTIC REG.</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SVM</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/analytics/blob/main/20260309-MRI-and-Alzheimers/Notebooks/data-analysis_v1.ipynb" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>NOTEBOOK</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P04 Heart Disease -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="ML Data Healthcare">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Nov 2025</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/analytics/blob/main/20251108-abw505-data-programming-course/Notebooks/heart_disease_v2.ipynb" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Heart Disease Analysis</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Analyzing heart disease from medical checkup data with machine learning model selection.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SKLEARN</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">KNN</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">DECISION TREE</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/analytics/blob/main/20251108-abw505-data-programming-course/Notebooks/heart_disease_v2.ipynb" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>NOTEBOOK</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P05 IMDb LLM -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Data AI">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Sep 2025</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/analytics-dirty-imdb-data/tree/main" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">IMDb Top 1000 — LLM Cleaning</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Cleaning and preprocessing dirty IMDb Top 1000 Movies data using LLM Gemini for structured extraction.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">GEMINI</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/analytics-dirty-imdb-data/tree/main" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P06 laksono-api-service -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Infrastructure API Real-time Cloud">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Feb 2025</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/laksono-api-service" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">laksono-api-service</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            REST API, event-driven worker, and WebSocket service reference implementation in Go. Continuously improved over time.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">GO</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">DOCKER</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">MAKEFILE</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/laksono-api-service" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P07 belajarcpp -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Web">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016–2019</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://www.belajarcpp.com/" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">belajarcpp.com</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Indonesian-language website to learn C++ programming. Built with PHP and WordPress.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PHP</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">WORDPRESS</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">JS</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://www.belajarcpp.com/" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>WEBSITE</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P08 Eye Health -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="ML Data Healthcare">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Feb 2024</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/analytics/blob/main/2025-02-17-3-sleep-health-and-digital-screen-exposure-dataset/eye-health-analysis.ipynb" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Eye Health Analysis &amp; ML Models</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Analyzing eye health from people's behavior data with extensive ML model selection across many classifiers.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SHAP</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">XGBOOST</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">SKLEARN</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/analytics/blob/main/2025-02-17-3-sleep-health-and-digital-screen-exposure-dataset/eye-health-analysis.ipynb" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>NOTEBOOK</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P09 Data Profession Survey -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Data Analytics">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Jan 2024</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/analytics/tree/main/2024-11-24-1-data-professional-survey" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Data Profession Survey — Power BI</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Translating raw survey data of 630 respondents into insights on favorite languages, roles, industries, and salary.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">POWER BI</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/analytics/tree/main/2024-11-24-1-data-professional-survey" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P10 Fraud Transaction -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="ML Data Finance Analytics">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-techBlue ring-4 ring-techBlue/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">Jan 2024</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-700/40 bg-sky-900/20 text-sky-400">PERSONAL</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/analytics/tree/main/2024-12-12-2-financial-transactions-analysis-and-prediction" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Fraud Transaction Prediction</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            Card transaction insights plus fraud detection with machine learning classifying fraudulent transactions.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">POWER BI</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PYTHON</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">RANDOM FOREST</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/analytics/tree/main/2024-12-12-2-financial-transactions-analysis-and-prediction" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P11 Topsis -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/topsis" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Topsis — Decision Support System</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            A Decision Support System implementing the Topsis method for multi-criteria decision making.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">PHP</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/topsis" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P12 Expert System VB6 -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="AI">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Expert System — Forward Chaining VB6</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            An Expert System diagnosing hardware failure using the Forward Chaining inference method.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">VB6</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P13 DSS VB.Net -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/spk-ahp-vb.net" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Decision Support System — VB.Net</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            A Decision Support System implementing the AHP (Analytic Hierarchy Process) method.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">VB.NET</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/spk-ahp-vb.net" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P14 Car Rental VB6 -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/RentalMobil-VB6" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Car Rental — VB6</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            A Car Rental Management System built in Visual Basic 6.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">VB6</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/RentalMobil-VB6" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P15 Money Lending VB6 -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Backend Finance">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2016</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://github.com/FajarLaksono/PeminjamanUang-VB6" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">Money Lending — VB6</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            A Money Lending Management System built in Visual Basic 6.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">VB6</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://github.com/FajarLaksono/PeminjamanUang-VB6" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>REPOSITORY</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- P16 The Dimension Game -->
-                <div class="relative pl-12 md:pl-20 pb-10 timeline-entry group" data-tags="Game Others">
-                    <div class="absolute left-4 md:left-8 top-1 -translate-x-1/2">
-                        <span class="flex h-3 w-3 rounded-full bg-slate-600 ring-4 ring-slate-600/20"></span>
-                    </div>
-                    <div class="bg-[#111726]/40 border border-slate-800/80 rounded-xl p-6 hover:border-techBlue/50 hover:shadow-[0_0_25px_rgba(0,102,255,0.1)] transition-all duration-300">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs font-mono text-slate-500">2013–2014</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/20 text-slate-400">LEGACY</span>
-                        </div>
-                        <a href="https://www.indiedb.com/games/the-dimensions-game" target="_blank" class="block">
-                            <h3 class="text-xl font-bold text-white mb-1 group-hover:text-techCyan transition-colors duration-300">The Dimension Game</h3>
-                        </a>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                            A 3D horror game made with Unity. Competition project from high school.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">UNITY</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-slate-800 bg-slate-900 text-slate-400">BLENDER</span>
-                        </div>
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <a href="https://www.indiedb.com/games/the-dimensions-game" target="_blank" class="text-xs font-mono text-slate-400 hover:text-white transition-colors duration-200 flex items-center space-x-2">
-                                <span>GAME PAGE</span><i data-lucide="external-link" class="w-3 h-3"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Endcap -->
-            <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-800/60 pt-8">
-                <p class="text-slate-400 text-sm font-mono">// END OF TRACK</p>
-                <a href="https://github.com/FajarLaksono?tab=repositories" target="_blank" class="inline-flex items-center space-x-2 text-xs font-mono text-techCyan hover:text-white transition-colors duration-200">
-                    <span>VIEW FULL CATALOG ON GITHUB</span>
-                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                </a>
+                </article>
             </div>
         </div>
     </section>
@@ -1596,349 +1166,126 @@
 })();
 </script>
 
-    <!-- Technical Capabilities (The System Matrix Spec) -->
-    <section id="capabilities" class="py-24 px-4 relative border-b border-slate-800/60">
-        <div class="max-w-7xl mx-auto">
-            
-            <div class="mb-16 text-center max-w-3xl mx-auto">
-                <span class="text-xs font-mono tracking-widest text-techBlue uppercase block mb-2">// SPECIFICATION Matrix</span>
-                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">Core Operating Capabilities</h2>
-                <p class="text-slate-400 text-base leading-relaxed">
-                    Designed like high-tech engineering specifications. These capabilities comprise the fundamental toolings and methodologies defining the software delivery lifecycle.
-                </p>
-            </div>
-
-            <!-- Technical Spec Panels Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 font-mono text-sm">
-                
-                <!-- Spec Box: Backend -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 text-white font-bold mb-6 pb-4 border-b border-slate-800/80">
-                            <i data-lucide="terminal" class="w-4 h-4 text-techBlue"></i>
-                            <span>01 // BACKEND</span>
-                        </div>
-                        <ul class="space-y-4 text-slate-400">
-                            <li class="flex justify-between items-center">
-                                <span>Go / Golang</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Java (Spring Boot)</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>C# (.NET)</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ADVANCED</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>PHP (Laravel)</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ADVANCED</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500">
-                        <span>LOAD STATUS:</span>
-                        <span class="text-techBlue font-bold">OPTIMIZED (100%)</span>
-                    </div>
-                </div>
-
-                <!-- Spec Box: Data + ML -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 text-white font-bold mb-6 pb-4 border-b border-slate-800/80">
-                            <i data-lucide="brain-circuit" class="w-4 h-4 text-techBlue"></i>
-                            <span>02 // DATA_ML</span>
-                        </div>
-                        <ul class="space-y-4 text-slate-400">
-                            <li class="flex justify-between items-center">
-                                <span>scikit-learn</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>TensorFlow / Keras</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ADVANCED</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>XGBoost / SHAP</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ADVANCED</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Power BI / DuckDB</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500">
-                        <span>RENDER LEVEL:</span>
-                        <span class="text-techBlue font-bold">OPTIMIZED (95%)</span>
-                    </div>
-                </div>
-
-                <!-- Spec Box: Infrastructure -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 text-white font-bold mb-6 pb-4 border-b border-slate-800/80">
-                            <i data-lucide="cloud" class="w-4 h-4 text-techBlue"></i>
-                            <span>03 // CLOUD_INFRA</span>
-                        </div>
-                        <ul class="space-y-4 text-slate-400">
-                            <li class="flex justify-between items-center">
-                                <span>AWS / GCP</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Kubernetes / Docker</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Kafka / Redis / ES</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>CI/CD Automations</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500">
-                        <span>SYNC METRIC:</span>
-                        <span class="text-techBlue font-bold">AUTO_SCALE (100%)</span>
-                    </div>
-                </div>
-
-                <!-- Spec Box: Product Lead -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-2 text-white font-bold mb-6 pb-4 border-b border-slate-800/80">
-                            <i data-lucide="git-branch" class="w-4 h-4 text-techBlue"></i>
-                            <span>04 // PRODUCT_LEAD</span>
-                        </div>
-                        <ul class="space-y-4 text-slate-400">
-                            <li class="flex justify-between items-center">
-                                <span>Roadmap & Release</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Cross-functional Delivery</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>System Design</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">EXPERT</span>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Technical Specs</span>
-                                <span class="text-white text-xs bg-slate-950 px-2 py-0.5 rounded border border-slate-800">COMPLIANT</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500">
-                        <span>VERIFICATION:</span>
-                        <span class="text-emerald-400 font-bold">SECURED_OK</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- Credentials Section (Rewards / Publications / Patents / Trainings) -->
-    <section id="credentials" class="py-24 px-4 bg-slate-950/30 border-b border-slate-800/60 relative">
+    <section id="credentials" class="py-24 px-4 border-b border-slate-800/60 relative bg-black">
         <div class="max-w-7xl mx-auto">
             
             <div class="mb-16 text-center max-w-3xl mx-auto">
-                <span class="text-xs font-mono tracking-widest text-techBlue uppercase block mb-2">// CREDENTIAL LOG</span>
                 <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">Recognitions & Records</h2>
-                <p class="text-slate-400 text-base leading-relaxed">
-                    Verified credentials, professional rewards, publications, patents, and training records.
-                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <!-- Rewards -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6">
-                    <div class="flex items-center space-x-2 text-white font-bold mb-5 pb-4 border-b border-slate-800/80 font-mono text-sm">
-                        <i data-lucide="award" class="w-4 h-4 text-techBlue"></i>
-                        <span>REWARDS // 04</span>
-                    </div>
-                    <ul class="space-y-4 text-slate-400 text-sm">
-                        <li class="flex items-start">
-                            <span class="text-techBlue mr-2">▪</span>
-                            <div>
-                                <p class="text-slate-200">Trainer — AI Webinar: Mindset, Future, and Ethics</p>
-                                <p class="text-xs text-slate-500 font-mono mt-1">Indonesian Students Association USM &middot; Oct 2025</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-techBlue mr-2">▪</span>
-                            <div>
-                                <p class="text-slate-200">Speaker — Designing a Cutting-Edge Career</p>
-                                <p class="text-xs text-slate-500 font-mono mt-1">Universitas Bina Sarana Informatika &middot; Sep 2021</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-techBlue mr-2">▪</span>
-                            <div>
-                                <p class="text-slate-200">PPA Scholarship 2017</p>
-                                <p class="text-xs text-slate-500 font-mono mt-1">Ministry of Education, Culture, Research, and Technology &middot; Sep 2016</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-techBlue mr-2">▪</span>
-                            <div>
-                                <p class="text-slate-200">Finalist — Video Game Design Development Competition</p>
-                                <p class="text-xs text-slate-500 font-mono mt-1">Binus University &middot; Sep 2013</p>
-                            </div>
-                        </li>
-                    </ul>
+            <!-- Publications -->
+            <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 mb-10">
+                <div class="flex items-center space-x-2 text-white font-bold mb-5 pb-4 border-b border-slate-800/80 font-mono text-sm">
+                    <i data-lucide="file-text" class="w-4 h-4 text-techBlue"></i>
+                    <span>PUBLICATIONS AND PATENTS</span>
                 </div>
+                <ul class="space-y-4 text-slate-400 text-mode">
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200"><a href="https://journal.uob.edu.bh/items/1c845c46-363a-424b-9971-681c8dacfa8a" target="_blank">Analysis of Cloud Resource Utilization and Cost Optimization Using Machine Learning on Azure VM Traces</a>, (Preprint)</p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">dx.doi.org/10.12785/ijcds &middot; Issued Aug 18, 2026</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200"><a href="https://ejurnal.ars.ac.id/index.php/jti/article/view/64" target="_blank">Analisis Kepuasan Pengguna Youtube Sebagai Media Pendidikan Menggunakan Model DeLone Dan McLean</a></p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">E-ISSN: 2685-6964 &middot; Issued Aug 15, 2019</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200"><a href="https://repository.bsi.ac.id/repo/19560/Learning-Management-System-Web-Based-Application-For--Computer-Science">Learning Management System Web Based Application For Computer Science</a></p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">ID 000146700 &middot; Issued Oct 1, 2018</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-                <!-- Publications -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6">
-                    <div class="flex items-center space-x-2 text-white font-bold mb-5 pb-4 border-b border-slate-800/80 font-mono text-sm">
-                        <i data-lucide="file-text" class="w-4 h-4 text-techBlue"></i>
-                        <span>PUBLICATIONS // 01</span>
-                    </div>
-                    <ul class="space-y-4 text-slate-400 text-sm">
-                        <li class="flex items-start">
-                            <span class="text-techBlue mr-2">▪</span>
-                            <div>
-                                <p class="text-slate-200">Analisis Kepuasan Pengguna Youtube Sebagai Media Pendidikan Menggunakan Model DeLone Dan McLean</p>
-                                <p class="text-xs text-slate-500 font-mono mt-1">E-ISSN: 2685-6964 &middot; Aug 15, 2019</p>
-                            </div>
-                        </li>
-                    </ul>
+            <!-- Rewards -->
+            <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 mb-10">
+                <div class="flex items-center space-x-2 text-white font-bold mb-5 pb-4 border-b border-slate-800/80 font-mono text-mode">
+                    <i data-lucide="award" class="w-4 h-4 text-techBlue"></i>
+                    <span>REWARDS</span>
                 </div>
-
-                <!-- Patents -->
-                <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6">
-                    <div class="flex items-center space-x-2 text-white font-bold mb-5 pb-4 border-b border-slate-800/80 font-mono text-sm">
-                        <i data-lucide="badge-check" class="w-4 h-4 text-techBlue"></i>
-                        <span>PATENTS // 01</span>
-                    </div>
-                    <ul class="space-y-4 text-slate-400 text-sm">
-                        <li class="flex items-start">
-                            <span class="text-techBlue mr-2">▪</span>
-                            <div>
-                                <p class="text-slate-200">Learning Management System Web Based Application For Computer Science</p>
-                                <p class="text-xs text-slate-500 font-mono mt-1">ID 000146700 &middot; Issued Oct 1, 2018</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="space-y-4 text-slate-400 text-mode">
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200">Trainer — AI Webinar: Mindset, Future, and Ethics</p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">Universiti Sains Malaysia &middot; Oct 2025</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200">Speaker — Designing a Cutting-Edge Career</p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">Universitas Bina Sarana Informatika &middot; Sep 2021</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200">PPA Scholarship 2017</p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">Ministry of Education, Culture, Research, and Technology &middot; Sep 2016</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-techBlue mr-2">▪</span>
+                        <div>
+                            <p class="text-slate-200">Finalist — Video Game Design Development Competition</p>
+                            <p class="text-sm text-slate-500 font-mono mt-1">Binus University &middot; Sep 2013</p>
+                        </div>
+                    </li>
+                </ul>
             </div>
 
             <!-- Trainings & Seminars (compact 2-column) -->
-            <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6">
+            <div class="bg-slate-900/30 border border-slate-800/80 rounded-xl p-6 mb-10">
                 <div class="flex items-center justify-between mb-5 pb-4 border-b border-slate-800/80 font-mono text-sm">
                     <div class="flex items-center space-x-2 text-white font-bold">
                         <i data-lucide="graduation-cap" class="w-4 h-4 text-techBlue"></i>
-                        <span>TRAININGS & SEMINARS // 28</span>
+                        <span>TRAININGS & SEMINARS</span>
                     </div>
-                    <span class="text-xs text-slate-500">2015 — 2025</span>
                 </div>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-slate-400 text-xs font-mono leading-relaxed">
-                    <li><span class="text-slate-600">Nov 2024 &middot;</span> Application of Power BI in Finance and Accounting Analytics <span class="text-slate-600">— USM</span></li>
-                    <li><span class="text-slate-600">Nov 2024 &middot;</span> Essential Statistics for Research <span class="text-slate-600">— USM</span></li>
-                    <li><span class="text-slate-600">Sep 2024 &middot;</span> Introduction to Business Analytics <span class="text-slate-600">— 365 Careers</span></li>
-                    <li><span class="text-slate-600">Jul 2024 &middot;</span> Cybersecurity Fundamentals for Developers <span class="text-slate-600">— AccelByte</span></li>
-                    <li><span class="text-slate-600">Jan 2024 &middot;</span> Anti-Harassment & Discrimination (HUR762-a92en) <span class="text-slate-600">— AccelByte</span></li>
-                    <li><span class="text-slate-600">Jan 2024 &middot;</span> Data Privacy 2024 (DPP014-a92en) <span class="text-slate-600">— AccelByte</span></li>
-                    <li><span class="text-slate-600">Jan 2024 &middot;</span> GDPR 2024 (DPP015-a92en) <span class="text-slate-600">— AccelByte</span></li>
-                    <li><span class="text-slate-600">Jan 2024 &middot;</span> Security Awareness Training 2024 <span class="text-slate-600">— AccelByte</span></li>
-                    <li><span class="text-slate-600">Dec 2023 &middot;</span> IELTS 9: Speaking Mastery <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Sep 2023 &middot;</span> Mastering IELTS Writing Task 2 <span class="text-slate-600">— The IELTS Teacher</span></li>
-                    <li><span class="text-slate-600">Mar 2023 &middot;</span> Mastering IELTS Writing Task 1 (Academic) <span class="text-slate-600">— The IELTS Teacher</span></li>
-                    <li><span class="text-slate-600">Jan 2023 &middot;</span> Trade Compliance (ABY602-a92en) <span class="text-slate-600">— AccelByte</span></li>
-                    <li><span class="text-slate-600">Apr 2022 &middot;</span> WE Kampus Inggris Pare <span class="text-slate-600">— Kampus Inggris Pare</span></li>
-                    <li><span class="text-slate-600">Feb 2022 &middot;</span> Dread-Free Difficult Conversations <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Feb 2022 &middot;</span> Feedback is Fuel <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Feb 2022 &middot;</span> How to Build Habit-forming Products <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Feb 2022 &middot;</span> Learn Go for Beginners Crash Course <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Jan 2022 &middot;</span> Cross-Cultural Communication <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Jan 2022 &middot;</span> Google's Go (golang) Programming Language <span class="text-slate-600">— Udemy</span></li>
-                    <li><span class="text-slate-600">Nov 2020 &middot;</span> Basic Programming for Data Science <span class="text-slate-600">— Skill Academy</span></li>
-                    <li><span class="text-slate-600">Nov 2020 &middot;</span> Master How to Speak in Public with NLP <span class="text-slate-600">— Skill Academy</span></li>
-                    <li><span class="text-slate-600">Oct 2020 &middot;</span> Procurement Science and Gov Projects <span class="text-slate-600">— LPKN</span></li>
-                    <li><span class="text-slate-600">Sep 2020 &middot;</span> Essential Communication Skills For Career <span class="text-slate-600">— Skill Academy</span></li>
-                    <li><span class="text-slate-600">Sep 2020 &middot;</span> Use of Agile and Scrum for Project Dev <span class="text-slate-600">— Skill Academy</span></li>
-                    <li><span class="text-slate-600">Sep 2018 &middot;</span> Creating UML Diagrams Of All Flavors <span class="text-slate-600">— UBSI</span></li>
-                    <li><span class="text-slate-600">Apr 2018 &middot;</span> Get Ready to be The Next Digital Entrepreneur <span class="text-slate-600">— Telkomsel</span></li>
-                    <li><span class="text-slate-600">Feb 2018 &middot;</span> CCNA Routing and Switching: Intro to Network <span class="text-slate-600">— Cisco</span></li>
-                    <li><span class="text-slate-600">Oct 2015 &middot;</span> Entrepreneur For All <span class="text-slate-600">— UBSI</span></li>
+                <ul class="space-y-4 text-slate-400 text-mode">
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Mar 2026</span> &emsp; Building with the Claude API <span class="text-slate-500">— Anthropic</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Mar 2026</span> &emsp; Introduction to Model Context Protocol <span class="text-slate-500">— Anthropic</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Mar 2026</span> &emsp; Claude Code in Action <span class="text-slate-500">— Anthropic</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Mar 2026</span> &emsp; Certificate of completion: Introduction to agent skills <span class="text-slate-500">— Anthropic</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2025</span> &emsp; Guest Lecture on Analytics Edge <span class="text-slate-500">— Universiti Sains Malaysia</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Nov 2024</span> &emsp; Application of Power BI in Finance and Accounting Analytics <span class="text-slate-500">— Universiti Sains Malaysia</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Nov 2024</span> &emsp; Essential Statistics for Research: A Practical Approach to Data Analysis <span class="text-slate-500">— Universiti Sains Malaysia</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Sep 2024</span> &emsp; Introduction to Business Analytics on Udemy <span class="text-slate-500">— 365 Careers</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jul 2024</span> &emsp; Cybersecurity Fundamentals for Developers <span class="text-slate-500">— AccelByte</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2024</span> &emsp; Anti-Harassment &amp; Discrimination (Code: HUR762-a92en) <span class="text-slate-500">— AccelByte</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2024</span> &emsp; Data Privacy 2024 (Code: DPP014-a92en) <span class="text-slate-500">— AccelByte</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2024</span> &emsp; General Data Protection Regulation 2024 (Code: DPP015-a92en) <span class="text-slate-500">— AccelByte</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2024</span> &emsp; Security Awareness Training 2024 <span class="text-slate-500">— AccelByte</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Dec 2023</span> &emsp; IELTS 9: Speaking Mastery <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Sep 2023</span> &emsp; Mastering IELTS Writing Task 2: IELTS Band 7+ Preparation on Udemy <span class="text-slate-500">— The IELTS Teacher</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Mar 2023</span> &emsp; Mastering IELTS Writing Task 1: (Academic) on Udemy <span class="text-slate-500">— The IELTS Teacher</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2023</span> &emsp; Trade Compliance (Code: ABY602-a92en) <span class="text-slate-500">— AccelByte</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Apr 2022</span> &emsp; WE Kampus Inggris Pare <span class="text-slate-500">— Kampus Inggris Pare</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Feb 2022</span> &emsp; Dread-Free Difficult Conversations: Speak Up with Courage <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Feb 2022</span> &emsp; Feedback is Fuel: Become better at giving and receiving feedback in the workspace <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Feb 2022</span> &emsp; How to build Habit-forming products <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Feb 2022</span> &emsp; Learn Go for Beginners Crash Course (Golang) <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2022</span> &emsp; Cross-Cultural Communication: How To Flex Your Style <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Jan 2022</span> &emsp; Learn How To Code: Google’s Go (golang) Programming Language <span class="text-slate-500">— Udemy</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Nov 2020</span> &emsp; Basic Programming for Data Science <span class="text-slate-500">— Skill Academy by Ruangguru</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Nov 2020</span> &emsp; Master How to Speak in Public with NLP Techniques <span class="text-slate-500">— Skill Academy by Ruangguru</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Oct 2020</span> &emsp; Understanding Procurement Science and Opportunities to Get Government Projects <span class="text-slate-500">— Lembaga Pengembangan dan Konsultasi Nasional</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Sep 2020</span> &emsp; Essential Communication Skills For Your Career <span class="text-slate-500">— Skill Academy by Ruangguru</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Sep 2020</span> &emsp; Use of Agile and Scrum for Project Development <span class="text-slate-500">— Skill Academy by Ruangguru</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Sep 2018</span> &emsp; Creating Unified Modeling Language (UML) Diagrams Of All Flavors <span class="text-slate-500">— Universitas Bina Sarana Informatika</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Apr 2018</span> &emsp; Get Ready to be The Next Digital Entrepreneur <span class="text-slate-500">— Telkomsel</span></li>
+                    <li class="flex items-start"><span class="text-techBlue mr-2">▪</span><span>Oct 2015</span> &emsp; Entrepreneur For All <span class="text-slate-500">— Universitas Bina Sarana Informatika</span></li>
                 </ul>
             </div>
-        </div>
-    </section>
-
-    <!-- Interactive Developer Console Terminal Section -->
-    <section id="terminal" class="py-24 px-4 bg-slate-950/40 relative">
-        <div class="max-w-4xl mx-auto">
-            
-            <div class="mb-10 text-center">
-                <span class="text-xs font-mono tracking-widest text-techBlue uppercase block mb-2">// SECURE NODE CONTROL</span>
-                <h2 class="text-3xl font-bold tracking-tight text-white mb-3">Interactive Command Terminal</h2>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">
-                    Execute command inputs below to run diagnostics, display system configurations, print credentials, or copy contact keys.
-                </p>
-            </div>
-
-            <!-- Terminal Chassis Container -->
-            <div class="bg-techDark border border-slate-800 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                <!-- Terminal Title Bar -->
-                <div class="bg-slate-900 border-b border-slate-800 px-4 py-3 flex items-center justify-between">
-                    <div class="flex items-center space-x-2">
-                        <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
-                        <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                        <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                        <span class="ml-2 text-xs font-mono text-slate-400 font-semibold tracking-wider uppercase">visitor@fajar.laksono.shell</span>
-                    </div>
-                    <div class="flex items-center space-x-2 bg-slate-950 px-2 py-1 rounded text-[10px] font-mono text-slate-500 border border-slate-800/60">
-                        <span>SYS_PORT: 443</span>
-                    </div>
-                </div>
-
-                <!-- Terminal Active Stream Output -->
-                <div id="terminal-screen" class="p-6 h-96 overflow-y-auto font-mono text-xs sm:text-sm space-y-4 text-slate-300 leading-relaxed scroll-smooth">
-                    <div>
-                        <span class="text-techBlue">visitor@fajar.laksono.shell:~#</span> initialize_visitor_session
-                        <div class="text-slate-500 mt-1">Connecting to matrix control... Done. Initializing session telemetry... Done.</div>
-                    </div>
-                    <div>
-                        <p class="text-emerald-400 font-bold mb-1">=== WELCOME TO THE CENTRAL OPERATIONS CORE ===</p>
-                        <p class="text-slate-400">Type <span class="text-techCyan font-semibold">help</span> to view all available commands. Try clicking the quick command buttons below.</p>
-                    </div>
-                </div>
-
-                <!-- Custom Terminal Quick Actions -->
-                <div class="px-6 py-3 border-t border-slate-800/80 bg-slate-950/50 flex flex-wrap gap-2">
-                    <span class="text-[10px] font-mono text-slate-500 flex items-center mr-1">PRESETS:</span>
-                    <button onclick="runCommand('help')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">help</button>
-                    <button onclick="runCommand('about')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">about</button>
-                    <button onclick="runCommand('skills')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">skills</button>
-                    <button onclick="runCommand('projects')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">projects</button>
-                    <button onclick="runCommand('cv')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">cv</button>
-                    <button onclick="runCommand('contact')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">contact</button>
-                    <button onclick="runCommand('clear')" class="text-xs font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-rose-400 rounded transition-colors duration-200">clear</button>
-                </div>
-
-                <!-- Terminal Command Input Bar -->
-                <form id="terminal-form" onsubmit="handleTerminalSubmit(event)" class="border-t border-slate-800 bg-slate-950 flex items-center px-4 py-3">
-                    <span class="text-techBlue font-mono text-xs sm:text-sm mr-2 font-bold flex-shrink-0">visitor@fajar.laksono.shell:~#</span>
-                    <input id="terminal-input" type="text" autocomplete="off" placeholder="Enter system call..." class="bg-transparent text-white font-mono text-xs sm:text-sm border-none outline-none focus:ring-0 w-full p-0 placeholder-slate-600">
-                    <button type="submit" class="text-slate-500 hover:text-white transition-colors p-1 flex-shrink-0">
-                        <i data-lucide="corner-down-left" class="w-4 h-4"></i>
-                    </button>
-                </form>
-            </div>
-
-            <!-- Custom Notification Toast -->
-            <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#111726] border border-techBlue text-white text-xs font-mono px-4 py-3 rounded-xl shadow-lg flex items-center space-x-3 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300">
-                <span class="w-2 h-2 rounded-full bg-techCyan animate-pulse"></span>
-                <span id="toast-message">Command executed.</span>
-            </div>
-
         </div>
     </section>
 
@@ -1948,162 +1295,35 @@
             <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-6">
                 <div class="flex items-center space-x-2">
                     <span class="text-techBlue font-bold">//</span>
-                    <span>FAJAR.LAKSONO // SYSTEM VERSION 2.4.0-STABLE</span>
+                    <span>FAJAR.LAKSONO.AI // VERSION 9.9.9-STABLE</span>
                 </div>
                 <div class="flex flex-wrap justify-center space-x-6">
-                    <a href="https://github.com/FajarLaksono" target="_blank" class="hover:text-white transition-colors duration-200">GITHUB</a>
-                    <a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank" class="hover:text-white transition-colors duration-200">LINKEDIN</a>
-                    <a href="https://laksonos-note.super.site/" target="_blank" class="hover:text-white transition-colors duration-200">NOTES</a>
-                    <a href="https://wa.me/+6289665888251" target="_blank" class="hover:text-white transition-colors duration-200">WHATSAPP</a>
-                    <a href="mailto:fajrlaksono@gmail.com" target="_blank" class="hover:text-white transition-colors duration-200">EMAIL</a>
-                    <a href="pro/assets/2026-06-21-FajarLaksono-Resume-Pro.pdf" target="_blank" class="text-techCyan hover:text-white transition-colors duration-200">DOWNLOAD_CV.pdf</a>
+                    <a href="https://github.com/FajarLaksono" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techCyan transition-colors duration-200">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 .297a12 12 0 0 0-3.79 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.01 0c2.292-1.552 3.299-1.23 3.299-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.221 0 4.61-2.805 5.624-5.476 5.921.43.372.814 1.103.814 2.222v3.294c0 .319.216.694.825.576A12.002 12.002 0 0 0 12 .297Z"></path>
+                        </svg><span>GITHUB</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techCyan transition-colors duration-200">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.859V9h2.955v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                        </svg><span>LINKEDIN</span>
+                    </a>
+                    <a href="mailto:fajrlaksono@gmail.com" class="inline-flex items-center gap-2 hover:text-techCyan transition-colors duration-200">
+                        <i data-lucide="mail" class="h-4 w-4" aria-hidden="true"></i><span>EMAIL</span>
+                    </a>
                 </div>
             </div>
             <div class="border-t border-slate-800/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div>Central Java, Indonesia &middot; Active on contracts</div>
+                <div>Jakarta, Indonesia &middot; Penang, Malaysia</div>
                 <div>&copy; 2026 Fajar Laksono. All system capabilities verified.</div>
             </div>
         </div>
     </footer>
-
-    <!-- Scripts for Icons and Terminal Control Logic -->
     <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Terminal logic references
-        const terminalScreen = document.getElementById('terminal-screen');
-        const terminalInput = document.getElementById('terminal-input');
-        const terminalForm = document.getElementById('terminal-form');
-        const toast = document.getElementById('toast');
-        const toastMessage = document.getElementById('toast-message');
-
-        // Command dictionary
-        const commandOutputs = {
-            'help': `Available system calls:
-  <span class="text-techCyan font-semibold">help</span>      - Print this configuration manual.
-  <span class="text-techCyan font-semibold">about</span>     - Print system operator bio.
-  <span class="text-techCyan font-semibold">skills</span>    - List comprehensive system capabilities in JSON format.
-  <span class="text-techCyan font-semibold">projects</span>  - Print index of active core modules.
-  <span class="text-techCyan font-semibold">cv</span>        - Print resume document locator.
-  <span class="text-techCyan font-semibold">contact</span>   - Print secure contact keys and copy dev email.
-  <span class="text-techCyan font-semibold">clear</span>     - Purge terminal display logs.`,
-
-            'about': `System operator: Fajar Laksono
-Role: Backend Engineer & Technical Product Lead
-Location: Central Java, Indonesia
-
-Operator specializes in high-scale distributed microservices, event-driven
-architectures, performance-critical cloud infrastructure, and end-to-end
-product lifecycle ownership. Merging backend runtime reliability with
-AI/ML-driven product decisions.
-
-<span class="text-techCyan font-bold">STATUS: DEPLOY READY</span>`,
-
-            'skills': `{
-  "capabilities": {
-    "languages": ["Go", "Java", "Python", "C#", "PHP"],
-    "frameworks": ["Spring Boot", "Laravel", "React.js"],
-    "datastores": ["PostgreSQL", "MongoDB", "Redis", "Kafka", "DuckDB"],
-    "infrastructure": ["AWS", "GCP", "Kubernetes", "Docker", "CI/CD"],
-    "ml_stack": ["scikit-learn", "TensorFlow/Keras", "XGBoost", "SHAP", "Power BI"]
-  }
-}`,
-
-            'projects': `Index of active core modules:
-  <span class="text-techCyan">01</span> Shieldbase AI              - https://shieldbase.ai/
-  <span class="text-techCyan">02</span> AccelByte Intelligence      - https://accelbyte.io/intelligence-service
-  <span class="text-techCyan">03</span> AccelByte Dev Toolkit      - https://accelbyte.io/accelbyte-development-toolkit
-  <span class="text-techCyan">04</span> Sembada Cloud (Thesis)     - github.com/FajarLaksono/sembada-cloud
-  <span class="text-techCyan">05</span> AI-Neuro EEG Parkinson's    - github.com/FajarLaksono/ai-neuro-EEG-ds002778-analysis
-  <span class="text-techCyan">06</span> laksono-api-service        - github.com/FajarLaksono/laksono-api-service
-
-<span class="text-slate-500">Full catalog: github.com/FajarLaksono?tab=repositories</span>`,
-
-            'cv': `Fetching resume document locator... Done.
-
-  <span class="text-white font-bold">DOCUMENT:</span> 2026-06-21-FajarLaksono-Resume-Pro.pdf
-  <span class="text-white font-bold">UPDATED:</span> 2026-06-21
-  <span class="text-white font-bold">URL:</span> pro/assets/2026-06-21-FajarLaksono-Resume-Pro.pdf
-
-<span class="text-techCyan font-bold">Action executed: open the URL above to download the resume.</span>`,
-
-            'contact': `Fetching system integration keys... Done.
-  
-  <span class="text-white font-bold">EMAIL:</span>    fajrlaksono@gmail.com
-  <span class="text-white font-bold">GITHUB:</span>   github.com/FajarLaksono
-  <span class="text-white font-bold">LINKEDIN:</span> linkedin.com/in/fajrlaksono
-  <span class="text-white font-bold">WHATSAPP:</span> wa.me/+6289665888251
-  <span class="text-white font-bold">NOTES:</span>   laksonos-note.super.site
-
-<span class="text-techCyan font-bold">Action executed: Developer email copied to secure clipboard backup.</span>`
-        };
-
-        // System function to copy text securely
-        function copySecureBackupText(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                showToast("System backup contact copied to clipboard.");
-            } catch (err) {
-                console.error('Could not copy securely: ', err);
-            }
-            document.body.removeChild(textarea);
-        }
-
-        // Display notifications securely
-        function showToast(message) {
-            toastMessage.textContent = message;
-            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
-            toast.classList.add('translate-y-0', 'opacity-100');
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 4000);
-        }
-
-        // Handles prompt executions
-        function runCommand(commandText) {
-            const trimmedCommand = commandText.trim().toLowerCase();
-            
-            // Append line visually representing what user typed
-            const userCommandNode = document.createElement('div');
-            userCommandNode.innerHTML = `<span class="text-techBlue">visitor@fajar.laksono.shell:~#</span> ${commandText}`;
-            terminalScreen.appendChild(userCommandNode);
-
-            if (trimmedCommand === 'clear') {
-                terminalScreen.innerHTML = '';
-            } else if (trimmedCommand in commandOutputs) {
-                const responseNode = document.createElement('div');
-                responseNode.className = 'mt-1 mb-3 text-slate-400 whitespace-pre-wrap';
-                responseNode.innerHTML = commandOutputs[trimmedCommand];
-                terminalScreen.appendChild(responseNode);
-
-                if (trimmedCommand === 'contact') {
-                    copySecureBackupText("fajrlaksono@gmail.com");
-                }
-            } else if (trimmedCommand !== '') {
-                const errorNode = document.createElement('div');
-                errorNode.className = 'mt-1 mb-3 text-rose-500';
-                errorNode.innerHTML = `sys_call: command not found: "${trimmedCommand}". Type <span class="text-techCyan font-semibold font-mono">help</span> for a listing of valid system modules.`;
-                terminalScreen.appendChild(errorNode);
-            }
-
-            // Scroll terminal screen down dynamically
-            terminalScreen.scrollTop = terminalScreen.scrollHeight;
-        }
-
-        // Intercept form submissions
-        function handleTerminalSubmit(event) {
-            event.preventDefault();
-            const cmd = terminalInput.value;
-            runCommand(cmd);
-            terminalInput.value = '';
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        } else {
+            console.error('Lucide icons could not be initialized because the library did not load.');
         }
     </script>
 </body>
