@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fajar Laksono — Backend Engineer & Technical Product Lead. High-scale distributed systems, cloud infrastructure, and AI/ML pipelines.">
-    <title>Fajar Laksono // Backend Engineer & Technical Product Lead</title>
+    <meta name="description" content="Fajar Laksono — Backend Engineer & AI Platform Engineer. High-scale distributed systems, cloud infrastructure, and AI/ML pipelines.">
+    <title>Fajar Laksono // Backend Engineer & AI Platform Engineer</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter and JetBrains Mono -->
@@ -352,21 +352,21 @@
 <body class="selection:bg-techBlue/30 selection:text-white">
 
     <!-- Sticky Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-techDark/80 border-b border-slate-800/80 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-techDark/80 border-b border-slate-800/80 transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Typography-based Logo -->
             <a href="#" class="flex items-center space-x-2 group">
                 <span class="font-mono text-base tracking-widest text-slate-400 group-hover:text-white transition-colors duration-200">
-                    <span class="text-techBlue font-bold bg-gradient-to-r from-white via-techCyan to-techBlue animate-gradient">FAJAR LAKSONO</span>
+                    <span class="text-techBlue font-bold bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient">FAJAR LAKSONO</span>
                 </span>
             </a>
 
             <!-- Navigation Links -->
             <nav class="hidden md:flex space-x-8 text-base font-medium">
-                <a href="#hero" class="text-slate-400 hover:text-white transition-colors duration-200">Prompt</a>
+                <a href="index.html" class="text-slate-400 hover:text-white transition-colors duration-200">Prompt</a>
                 <a href="https://laksonos-note.super.site/" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-200">Blog</a>
-                <a href="#capabilities" class="text-slate-400 hover:text-white transition-colors duration-200">Projects</a>
-                <a href="#terminal" class="text-slate-400 hover:text-white transition-colors duration-200">About</a>
+                <a href="project.html" class="text-slate-400 hover:text-white transition-colors duration-200">Projects</a>
+                <a href="about.html" class="text-slate-400 hover:text-white transition-colors duration-200">About</a>
             </nav>
 
             <!-- Availability Status Indicator Badge & CTA -->
@@ -386,8 +386,6 @@
         <div class="absolute inset-0 hero-grid hero-grid-mask pointer-events-none"></div>
         <!-- Scanline shimmer -->
         <div class="hero-scanline"></div>
-        
-        
         
         <div class="max-w-7xl mx-auto text-center relative z-10">
             <!-- Top Capsule Badge -->
@@ -448,22 +446,42 @@
         <!-- Call-to-actions -->
         <div class="mt-12">
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#projects" class="w-full sm:w-auto bg-techBlue hover:bg-blue-600 text-white font-mono text-sm font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.3)] hover:shadow-[0_0_30px_rgba(0,102,255,0.6)] flex items-center justify-center space-x-2">
+                <a href="project.html" class="w-full sm:w-auto bg-techBlue hover:bg-blue-600 text-white font-mono text-sm font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.3)] hover:shadow-[0_0_30px_rgba(0,102,255,0.6)] flex items-center justify-center space-x-2">
                     <span>See Projects</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-                <a href="#capabilities" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                <a href="https://laksonos-note.super.site/" target="_blank" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
                     <span>See Blog</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-                <a href="#capabilities" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                <a href="index.html" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
                     <span>See Prompt</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
+
+        <!-- Social Medias -->
+        <div class="mt-12">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://github.com/FajarLaksono" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techBlue transition-colors duration-200">
+                    <svg class="h-10 w-10 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M12 .297a12 12 0 0 0-3.79 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.01 0c2.292-1.552 3.299-1.23 3.299-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.221 0 4.61-2.805 5.624-5.476 5.921.43.372.814 1.103.814 2.222v3.294c0 .319.216.694.825.576A12.002 12.002 0 0 0 12 .297Z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techBlue transition-colors duration-200">
+                    <svg class="h-10 w-10 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.859V9h2.955v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                    </svg>
+                </a>
+                <a href="mailto:fajrlaksono@gmail.com" class="inline-flex items-center gap-2 hover:text-techBlue transition-colors duration-200">
+                    <i data-lucide="mail" class="h-10 w-10" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
+    
     
     <!-- Experience -->
     <section id="experience" class="border-t border-border py-16 md:py-20">
@@ -480,7 +498,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                     src="images/ProfessionalDevelopment.jpg"
                     alt="Career Break"
@@ -502,7 +520,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                     src="images/ShieldbaseAI.png"
                     alt="Career Break"
@@ -524,7 +542,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                     src="images/ShieldbaseAI.png"
                     alt="Career Break"
@@ -546,7 +564,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                       src="images/AccelByte.png"
                       alt="Career Break"
@@ -566,7 +584,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                       src="images/AccelByte.png"
                       alt="Career Break"
@@ -586,7 +604,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                       src="images/Agate.png"
                       alt="Agate International"
@@ -606,7 +624,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                       src="images/GRIT ID.jpeg"
                       alt="Agate International"
@@ -626,7 +644,7 @@
               >
                 <div class="flex items-center gap-3">
                   <span
-                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border/80 bg-white/95"
+                    class="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg"
                     ><img
                       src="images/MMI.jpeg"
                       alt="Agate International"
@@ -647,64 +665,70 @@
             <div class="space-y-6 animate-fade-in" data-experience-panel role="tabpanel" tabindex="0">
               <div class="flex flex-wrap items-start gap-4">
                 <span
-                  class="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-white/95 shadow-sm"
+                  class="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl shadow-sm"
                   ><img
-                    alt="ParagonCorp logo"
-                    loading="lazy"
-                    width="56"
-                    height="56"
-                    decoding="async"
-                    data-nimg="1"
-                    class="h-14 w-14 object-contain p-1.5"
-                    style="color: transparent"
-                    srcset="
-                      /_next/image?url=%2Flogos%2Fparagoncorp.png&amp;w=64&amp;q=75  1x,
-                      /_next/image?url=%2Flogos%2Fparagoncorp.png&amp;w=128&amp;q=75 2x
-                    "
-                    src="/_next/image?url=%2Flogos%2Fparagoncorp.png&amp;w=128&amp;q=75"
-                /></span>
+                    src="images/ProfessionalDevelopment.jpg"
+                    alt="Career Break"
+                    width="40"
+                    height="40"
+                    class="h-10 w-10 object-contain"
+                  /></span>
                 <div class="min-w-0 flex-1">
                   <div class="mb-2 text-sm text-muted-foreground">
-                    Jul 2025 - Present
+                    Apr 2026 - Present
                   </div>
                   <h3 class="mb-1 text-3xl font-bold text-foreground">
-                    Software Engineer
+                    Professional Development
                   </h3>
-                  <p class="text-lg font-semibold text-primary">ParagonCorp</p>
+                  <p class="text-lg font-semibold text-primary">Career Break</p>
                 </div>
               </div>
               <ul
                 class="list-disc space-y-2 pl-5 text-sm text-muted-foreground marker:text-primary"
               >
                 <li class="leading-relaxed">
-                  Hardened backends and closed critical security findings.
+                  Finished the final semester of master's study in Malaysia, Apr 2026 - Aug 2026
                 </li>
                 <li class="leading-relaxed">
-                  Integrated SAP for automated invoice parking and posting.
+                  Finished writing an academic paper (Predictive Analysis of Cloud Resource Utilization and Cost Optimization Using Machine Learning on Azure VM Traces), Apr 2026 - Aug 2026 
                 </li>
                 <li class="leading-relaxed">
-                  Migrated a legacy PHP budgeting stack to Express.js.
+                  Earned AWS Certified Solutions Architect – Associate (SAA-C03), Sep 2026
                 </li>
                 <li class="leading-relaxed">
-                  Improved reliability, data consistency, and multi-year planning.
+                  Earned AWS Certified AI Practitioner (AIF-C01), Oct 2026
                 </li>
                 <li class="leading-relaxed">
-                  Mentored interns through production-ready delivery.
+                  Learning ML/DL and made some personal projects. Aug 2026 - Present
+                </li>
+                <li class="leading-relaxed">
+                  Learning AI/LLM and made some personal projects. Sep 2026 - Present
+                </li>
+                <li class="leading-relaxed">
+                  Learning AWS Certified Generative AI Developer - Professional (AIP-C01), Oct 2026 - Present 
                 </li>
               </ul>
               <div class="flex flex-wrap gap-2 pt-2">
                 <span
                   data-slot="badge"
                   class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden [a&amp;]:hover:bg-secondary/90 border-primary/20 bg-primary/10 text-primary"
-                  >JS</span
+                  >AWS</span
                 ><span
                   data-slot="badge"
                   class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden [a&amp;]:hover:bg-secondary/90 border-primary/20 bg-primary/10 text-primary"
-                  >PHP</span
+                  >ML</span
                 ><span
                   data-slot="badge"
                   class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden [a&amp;]:hover:bg-secondary/90 border-primary/20 bg-primary/10 text-primary"
-                  >SAP</span
+                  >DL</span
+                ><span
+                  data-slot="badge"
+                  class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden [a&amp;]:hover:bg-secondary/90 border-primary/20 bg-primary/10 text-primary"
+                  >AI</span
+                ><span
+                  data-slot="badge"
+                  class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden [a&amp;]:hover:bg-secondary/90 border-primary/20 bg-primary/10 text-primary"
+                  >LLM</span
                 >
               </div>
             </div>
@@ -725,31 +749,100 @@
 
     const experiences = [
         {
-            company: 'ParagonCorp',
-            role: 'Software Engineer',
-            period: 'Jul 2025 - Present',
+            company: 'Career Break',
+            role: 'Professional Development',
+            period: 'Apr 2026 - Present',
             highlights: [
-                'Hardened backends and closed critical security findings.',
-                'Integrated SAP for automated invoice parking and posting.',
-                'Migrated a legacy PHP budgeting stack to Express.js.',
-                'Improved reliability, data consistency, and multi-year planning.',
-                'Mentored interns through production-ready delivery.'
+                'Apr 2026 - Aug 2026, Finished the final semester of master\'s study in Malaysia.',
+                'Apr 2026 - Aug 2026, Finished writing an academic paper (Predictive Analysis of Cloud Resource Utilization and Cost Optimization Using Machine Learning on Azure VM Traces).',
+                'Sep 2026, Earned AWS Certified Solutions Architect – Associate (SAA-C03).',
+                'Oct 2026, Earned AWS Certified AI Practitioner (AIF-C01)',
+                'Aug 2026, Learning AI/LLM/ML/DL and made some personal projects.',
+                'Oct 2026 - Present, Learning AWS Certified Generative AI Developer - Professional (AIP-C01).'
             ],
-            skills: ['JavaScript', 'PHP', 'SAP']
+            skills: ['AWS', 'AI', 'LLM', 'ML', 'DL', 'Ollama']
+        },
+        {
+            company: 'Shieldbase AI',
+            role: 'Technical Lead',
+            period: 'Mar 2025 - Jun 2025',
+            highlights: [
+                'Managed roadmap prioritization and end-to-end execution for a 9-person cross-functional team across Product, Engineering, and QA.',
+                'Translated business requirements into technical specs and release plans.',
+                'Shipped 10+ MVPs in short iteration cycles to validate concepts before full builds for high-stakes pitches.',
+                'Introduced code and test review processes and automated testing that accelerated stable deployments.', 
+                'Established unified QA framework across Engineering and QA workflows.'
+            ],
+            skills: ['Python', 'ClaudeCode', 'Vector PostgreSQL (pgvector)', 'Milvus', 'GitHub CI/CD', 'GCP', 'CrewAI', 'LangChain', 'LiteLLM', 'mem0ai', 'Hugging Face Transformers', 'Sentence Transformers', 'MiniLM', 'AWS', 'Kubernetes', 'Docker', 'Grafana']
+        },
+        {
+            company: 'Shieldbase AI',
+            role: 'Software Engineer',
+            period: 'Jun 2025 - Apr 2026',
+            highlights: [
+                'Built RAG pipelines in Python (LangChain, LiteLLM) for ingestion, chunking, embedding, and retrieval.',
+                'Automated LLM orchestration with CrewAI and mem0ai across the RAG workflow.',
+                'Improved retrieval quality using Sentence Transformers (MiniLM) and Milvus + pgvector.'
+            ],
+            skills: ['Python', 'ClaudeCode', 'Vector PostgreSQL (pgvector)', 'Milvus', 'GitHub CI/CD', 'GCP', 'CrewAI', 'LangChain', 'LiteLLM', 'mem0ai', 'Hugging Face Transformers', 'Sentence Transformers', 'MiniLM', 'AWS', 'Kubernetes', 'Docker', 'Grafana']
         },
         {
             company: 'AccelByte',
-            role: 'Software Engineer',
+            role: 'Software Engineer III',
+            period: 'Nov 2023 - Dec 2024',
             highlights: [
-                'Owned 10+ backend services supporting 8+ AAA game studios.',
-                'Helped cut operational costs by approximately 40% and improve team workflow efficiency by approximately 90%.'
+                'Automated the release and deployment pipeline for 15+ services, cutting release effort by ~90% (from 6 hours to 30 minutes per cycle).',  
+                'Owned and managed the release process of 15+ services by evaluating and documenting release candidate items for user communication, ensuring all deliverables met quality and functional standards.', 
+                'Led an initiative to automate the data warehouse migration script by implementing Flyway and creating a sandbox environment, successfully improving Database Engineers\' productivity by ~95%.' 
             ],
-            skills: ['Backend', 'Cloud', 'Game Services']
+            skills: ['Python', 'AWS', 'PostgreSQL', 'Kafka', 'Airflow', 'Kinesis', 'Athena', 'Grafana', 'Kubernetes', 'Jenkins', 'Prometheus']
         },
-        { company: 'HappyFresh', role: 'Backend Engineer' },
-        { company: 'Mola TV', role: 'Backend Engineer Head' },
-        { company: 'Mola TV', role: 'Backend Engineer' },
-        { company: 'Tokopedia', role: 'Technical Writer Intern' }
+        {
+            company: 'AccelByte',
+            role: 'Software Engineer II',
+            period: 'Mar 2021 - Nov 2023 ',
+            highlights: [
+                'Owned 10+ backend services and 2 CLI/SDK tools across 3 products: Development Toolkit, Publishing Toolkits, and Intelligence Service.', 
+                'Reduced operational cost of CDN and storage by ~40% across multiple company products.', 
+                'Automated deployment pipelines and data warehouse migrations, improving release-train and team productivity by 25-40%.',  
+                'Distributed 12.5 PB builds and processed 118K crash reports across 8+ game launches.',  
+                'Authored security architecture documentation for ISO 27001 and GDPR compliance for enterprise security reviews.', 
+                'Served as direct technical point of contact for enterprise AAA game studios (Kafton, Dreamhaven, RaidBase, Striking Distance Studios, Sony, Starbreeze, Theorycraft, Skybound Games, etc.), resolving backend integration issues and building customer trust.', 
+                'Participated in 24×7 on-call rotation and postmortems for services; tracked SLOs in Grafana/Prometheus.'  
+            ],
+            skills: ['Python', 'Go', 'Java', 'C++', 'AWS', 'Kubernetes', 'Docker', 'Grafana', 'GitLab CI/CD', 'PostgreSQL', 'MongoDB', 'Elasticsearch', 'Redis', 'Kafka']
+        },
+        {
+            company: 'Agate International',
+            role: 'Software Engineer',
+            period: 'Sep 2020 - Apr 2021',
+            highlights: [
+                'Joined Agate\'s Level-Up B2B gamification team, delivering high-impact solutions for enterprise and startup clients (whose portfolio includes Gojek, Tokopedia, BCA, and Populix).',
+                'Contributed to the web and infrastructure development of a custom gamified solution for Populix, successfully enhancing user engagement and survey participation through interactive mechanics.',
+                'Engineered backend solutions and APIs for game integration, streamlining data exchange and ensuring system reliability across client-facing products.'
+            ],
+            skills: ['C# .NET Core', 'MySQL', 'Azure']
+        },
+        {
+            company: 'GRIT ID',
+            role: 'Full-stack Programmer',
+            period: 'Sep 2019 - Mar 2020 (Pandemic)',
+            highlights: [
+                'Built a national management system for the Indonesian public sector, supporting large-scale administrative workflows. Coordinated daily with government stakeholders on-site to translate complex policy requirements into technical specifications.', 
+                'Optimized PostgreSQL query performance and database indexing to ensure high data quality for government reporting.' 
+            ],
+            skills: ['PHP', 'Laravel', 'PostgreSQL']
+        },
+        {
+            company: 'Mitra Mandiri Informatika',
+            role: 'Junior Programmer',
+            period: 'Apr 2016 - Sep 2016 ',
+            highlights: [
+                'Built decision support system applications.', 
+                'Documented technical and user guidance for the product release.' 
+            ],
+            skills: ['PHP', 'VB', 'VB.Net', 'MySQL']
+        },
     ];
 
     function makeElement(tag, className, text) {
