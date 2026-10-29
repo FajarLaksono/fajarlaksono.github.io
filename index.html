@@ -236,28 +236,31 @@
                             </h1>
                             <div>
                                 <p class="text-emerald-400 font-bold mb-1">=== WELCOME TO FAJAR LAKSONO PROFESSIONAL PROFILE ===</p>
-                                <p class="text-slate-400">Type <span class="text-techCyan font-semibold">help</span> to view all available prompts. Try clicking the quick prompt buttons below.</p>
+                                <p class="text-slate-400">I’m a scripted portfolio guide, not a live AI. Ask me about Fajar’s experience, skills, projects, education, or contact details—or type <span class="text-techCyan font-semibold">help</span> to see available prompts.</p>
                             </div>
                         </div>
 
                         <!-- Custom Terminal Quick Actions -->
                         <div class="px-6 py-3 border-t border-slate-800/80 bg-slate-950/50 flex flex-wrap gap-2">
                             <span class="text-[20px] font-mono text-slate-500 flex items-center mr-1">Prompts:</span>
-                            <button onclick="runCommand('help')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">help</button>
-                            <button onclick="runCommand('about')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">about</button>
-                            <button onclick="runCommand('skills')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">skills</button>
-                            <button onclick="runCommand('projects')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">projects</button>
-                            <button onclick="runCommand('cv')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">cv</button>
-                            <button onclick="runCommand('contact')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">contact</button>
-                            <button onclick="runCommand('clear')" class="text-base font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-rose-400 rounded transition-colors duration-200">clear</button>
+                            <button onclick="runCommand('help')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">help</button>
+                            <button onclick="runCommand('about')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">about</button>
+                            <button onclick="runCommand('experience')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">experience</button>
+                            <button onclick="runCommand('skills')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">skills</button>
+                            <button onclick="runCommand('projects')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">projects</button>
+                            <button onclick="runCommand('education')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">education</button>
+                            <button onclick="runCommand('certifications')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">certifications</button>
+                            <!-- <button onclick="runCommand('cv')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">cv</button> -->
+                            <button onclick="runCommand('contact')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 rounded transition-colors duration-200">contact</button>
+                            <button onclick="runCommand('clear')" class="text-sm font-mono px-3 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-rose-400 rounded transition-colors duration-200">clear</button>
                         </div>
 
                         <!-- Terminal Command Input Bar -->
                         <form id="terminal-form" onsubmit="handleTerminalSubmit(event)"
                             class="terminal-form border-t border-slate-800 bg-slate-950 flex items-center px-5 py-4 transition-colors focus-within:border-techBlue/60">
-                            <span class="bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient terminal-prompt text-techBlue font-mono text-sm sm:text-base mr-3 font-bold flex-shrink-0">User:~#</span>
+                            <span class="bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient terminal-prompt text-techBlue font-mono text-lg sm:text-lg mr-3 font-bold flex-shrink-0">User:~#</span>
                             <input id="terminal-input" type="text" autocomplete="off" placeholder="Enter your prompt..."
-                                class="terminal-input bg-transparent text-white font-mono text-base sm:text-lg border-none outline-none focus:ring-0 w-full p-0 placeholder-slate-600">
+                                class="terminal-input bg-transparent text-white font-mono text-lg sm:text-lg border-none outline-none focus:ring-0 w-full p-0 placeholder-slate-600">
                             <button type="submit" class="text-slate-500 hover:text-techCyan transition-colors p-1 flex-shrink-0">
                                 <i data-lucide="corner-down-left" class="w-5 h-5"></i>
                             </button>
@@ -268,7 +271,7 @@
                     <div class="mt-12">
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a href="about.html" class="w-full sm:w-auto bg-techBlue hover:bg-blue-600 text-white font-mono text-sm font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.3)] hover:shadow-[0_0_30px_rgba(0,102,255,0.6)] flex items-center justify-center space-x-2">
-                                <span>See Resume</span>
+                                <span>See About</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </a>
                             <a href="projects.html" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
@@ -487,44 +490,76 @@
         // Command dictionary
         const commandOutputs = {
             'help': `Available system calls:
-  <span class="text-techCyan font-semibold">help</span>      - Print this configuration manual.
-  <span class="text-techCyan font-semibold">about</span>     - Print system operator bio.
-  <span class="text-techCyan font-semibold">skills</span>    - List comprehensive system capabilities in JSON format.
-  <span class="text-techCyan font-semibold">projects</span>  - Print index of active core modules.
-  <span class="text-techCyan font-semibold">cv</span>        - Print resume document locator.
-  <span class="text-techCyan font-semibold">contact</span>   - Print secure contact keys and copy dev email.
-  <span class="text-techCyan font-semibold">clear</span>     - Purge terminal display logs.`,
+  <span class="text-techCyan font-semibold">about</span>          - Who Fajar is, his role, and location.
+  <span class="text-techCyan font-semibold">experience</span>     - Career highlights and impact.
+  <span class="text-techCyan font-semibold">skills</span>         - Technologies and areas of expertise.
+  <span class="text-techCyan font-semibold">projects</span>       - Selected professional and personal projects.
+  <span class="text-techCyan font-semibold">education</span>      - Degrees and universities.
+  <span class="text-techCyan font-semibold">certifications</span> - Current professional certifications.
+  <span class="text-techCyan font-semibold">contact</span>        - Contact details.
+  <span class="text-techCyan font-semibold">clear</span>          - Clear the terminal display.
 
-            'about': `System operator: Fajar Laksono
-Role: Backend Engineer & Technical Product Lead
-Location: Central Java, Indonesia
+You can also ask simple questions, such as "What technologies does Fajar use?"`,
 
-Operator specializes in high-scale distributed microservices, event-driven
-architectures, performance-critical cloud infrastructure, and end-to-end
-product lifecycle ownership. Merging backend runtime reliability with
-AI/ML-driven product decisions.
+            'about': `Fajar Aziz Laksono is a software engineer specializing in backend engineering, data, and AI infrastructure.
 
-<span class="text-techCyan font-bold">STATUS: DEPLOY READY</span>`,
+He has 6+ years of experience building scalable production services and leading cross-functional delivery. His work includes distributed systems, data and AI pipelines, and cloud applications.
+
+Currently in Jakarta, Indonesia; also based in Penang, Malaysia.
+
+<span class="text-slate-500">Ask about experience, skills, projects, education, or certifications for more.</span>`,
+
+            'experience': `Career highlights:
+
+• Shieldbase AI — Technical Product Lead; led a 9-person cross-functional team shipping RAG products and managed product delivery across business, engineering, and QA.
+• Shieldbase AI — Built RAG pipelines with Python, LangChain, and LiteLLM, plus LLM orchestration with CrewAI and mem0ai.
+• AccelByte — Owned 10+ backend services supporting 8+ AAA game studios.
+• AccelByte — Automated releases for 15+ services, reducing release effort from about 6 hours to 30 minutes per cycle.
+• AccelByte — Reduced CDN and storage costs by about 40% across multiple products.
+• Earlier work includes software engineering at Agate International, GRIT ID, and MMI.
+
+See <a class="text-techCyan underline" href="about.html#experience">full experience on the About page</a>.`,
 
             'skills': `{
-  "capabilities": {
-    "languages": ["Go", "Java", "Python", "C#", "PHP"],
-    "frameworks": ["Spring Boot", "Laravel", "React.js"],
-    "datastores": ["PostgreSQL", "MongoDB", "Redis", "Kafka", "DuckDB"],
-    "infrastructure": ["AWS", "GCP", "Kubernetes", "Docker", "CI/CD"],
-    "ml_stack": ["scikit-learn", "TensorFlow/Keras", "XGBoost", "SHAP", "Power BI"]
-  }
-}`,
+  "software": ["Python", "C/C++", "Go", "PHP"],
+  "cloud": ["AWS", "EKS", "EC2", "Lambda", "S3", "CloudWatch"],
+  "data_and_messaging": ["PostgreSQL", "MySQL", "MongoDB", "Elasticsearch", "Redis", "Kafka", "Milvus"],
+  "containers_and_delivery": ["Kubernetes", "Docker", "GitHub Actions", "GitLab CI", "Jenkins"],
+  "observability_and_reliability": ["Prometheus", "Grafana", "SLOs", "incident management", "automated testing"],
+  "ai_and_agents": ["CrewAI", "LangChain", "mem0ai", "Ollama"]
+}
 
-            'projects': `Index of active core modules:
-  <span class="text-techCyan">01</span> Shieldbase AI              - https://shieldbase.ai/
-  <span class="text-techCyan">02</span> AccelByte Intelligence      - https://accelbyte.io/intelligence-service
-  <span class="text-techCyan">03</span> AccelByte Dev Toolkit      - https://accelbyte.io/accelbyte-development-toolkit
-  <span class="text-techCyan">04</span> Sembada Cloud (Thesis)     - github.com/FajarLaksono/sembada-cloud
-  <span class="text-techCyan">05</span> AI-Neuro EEG Parkinson's    - github.com/FajarLaksono/ai-neuro-EEG-ds002778-analysis
-  <span class="text-techCyan">06</span> laksono-api-service        - github.com/FajarLaksono/laksono-api-service
+<span class="text-slate-500">See the About page for the full skills list.</span>`,
 
-<span class="text-slate-500">Full catalog: github.com/FajarLaksono?tab=repositories</span>`,
+            'projects': `Selected projects:
+
+• Shieldbase AI — AI-driven automation and data-informed decision platform; Fajar led product lifecycle alignment and delivery.
+• DocsSearch — Local document Q&A with retrieval-grounded answers, citation tracing, and evaluation.
+• DonkeyCar Simulator Drivers Data Platform — AD/ADAS data and model distribution platform with reinforcement learning.
+• Cloud Resource and Cost Prediction — Master's research using machine learning and deep learning to predict cloud usage and cost.
+• AccelByte Intelligence Service — Game analytics and insights ecosystem, including data pipelines and customer analysis.
+• AccelByte Development Toolkit — Game development workflows and backend services; included 10+ services and CLI/SDK tools.
+• AccelByte Publishing Toolkits — Backend tools supporting game publishing workflows.
+• LevelUp / Agate — Gamification services and an internal game-operations portal.
+• laksono-api-service — Go sample project with REST APIs, event-driven workers, and WebSockets.
+• Other personal projects explore BNPL payment behavior, healthcare data, fraud analysis, and machine learning.
+
+<a class="text-techCyan underline" href="projects.html">Browse the full project catalog</a>`,
+
+            'education': `Education:
+
+• Master's degree in Business Analytics — Universiti Sains Malaysia (2024–2026).
+• Bachelor's degree in Information System — Universitas Bina Sarana Informatika (2015–2019).
+
+Fajar's master's research analyzed cloud resource utilization and cost optimization using machine learning on Azure VM traces.`,
+
+            'certifications': `Certifications:
+
+• AWS Certified Solutions Architect – Associate (SAA-C03), valid Sep 2026–Sep 2029.
+• AWS Certified AI Practitioner (AIF-C01), valid Oct 2026–Oct 2029.
+• CCNA Routing and Switching, Introduction to Network (CCNA 200-301; validity ended Feb 2021).
+
+<span class="text-slate-500">The About page has the full credential details.</span>`,
 
             'cv': `Fetching resume document locator... Done.
 
@@ -539,11 +574,34 @@ AI/ML-driven product decisions.
   <span class="text-white font-bold">EMAIL:</span>    fajrlaksono@gmail.com
   <span class="text-white font-bold">GITHUB:</span>   github.com/FajarLaksono
   <span class="text-white font-bold">LINKEDIN:</span> linkedin.com/in/fajrlaksono
-  <span class="text-white font-bold">WHATSAPP:</span> wa.me/+6289665888251
-  <span class="text-white font-bold">NOTES:</span>   laksonos-note.super.site
+  <span class="text-white font-bold">Blog/NOTES:</span>   laksonos-note.super.site
 
 <span class="text-techCyan font-bold">Action executed: Developer email copied to secure clipboard backup.</span>`
         };
+
+        const promptTopics = [
+            { command: 'help', terms: ['help', 'commands', 'available prompts', 'what can you do'] },
+            { command: 'experience', terms: ['experience', 'career', 'work history', 'worked', 'job', 'professional background', 'at accelbyte', 'at shieldbase'] },
+            { command: 'education', terms: ['education', 'degree', 'university', 'college', 'studied', 'study', 'master', 'bachelor'] },
+            { command: 'certifications', terms: ['certification', 'certifications', 'certificate', 'certificates', 'aws certified', 'ccna'] },
+            { command: 'skills', terms: ['skills', 'technologies', 'technology', 'tech stack', 'programming language', 'tools', 'what does he use', 'what does fajar use'] },
+            { command: 'projects', terms: ['project', 'projects', 'portfolio', 'what has he built', 'what has fajar built', 'shieldbase', 'accelbyte intelligence', 'development toolkit', 'publishing toolkit', 'agate', 'api service', 'docssearch', 'donkeycar', 'cloud resource', 'bnpl', 'alzheimer', 'heart disease', 'fraud transaction', 'eye health', 'data profession'] },
+            { command: 'contact', terms: ['contact', 'email', 'reach', 'linkedin', 'github', 'whatsapp'] },
+            // { command: 'cv', terms: ['cv', 'resume', 'résumé'] },
+            { command: 'about', terms: ['about', 'who is', 'who are', 'tell me about fajar', 'fajar laksono', 'location', 'where is'] }
+        ];
+
+        function resolvePrompt(prompt) {
+            const normalizedPrompt = prompt.toLowerCase().replace(/[^\w\s-]/g, ' ').replace(/\s+/g, ' ').trim();
+            if (normalizedPrompt in commandOutputs || normalizedPrompt === 'clear') {
+                return normalizedPrompt;
+            }
+
+            const matchedTopic = promptTopics.find(topic =>
+                topic.terms.some(term => normalizedPrompt.includes(term))
+            );
+            return matchedTopic ? matchedTopic.command : null;
+        }
 
         // System function to copy text securely
         function copySecureBackupText(text) {
@@ -575,28 +633,33 @@ AI/ML-driven product decisions.
 
         // Handles prompt executions
         function runCommand(commandText) {
-            const trimmedCommand = commandText.trim().toLowerCase();
-            
-            // Append line visually representing what user typed
+            const trimmedCommand = commandText.trim();
+            if (!trimmedCommand) return;
+
             const userCommandNode = document.createElement('div');
-            userCommandNode.innerHTML = `<span class="text-techBlue">User:~#</span> ${commandText}`;
+            const promptLabel = document.createElement('span');
+            promptLabel.className = 'text-techBlue';
+            promptLabel.textContent = 'User:~#';
+            userCommandNode.append(promptLabel, document.createTextNode(` ${trimmedCommand}`));
             terminalScreen.appendChild(userCommandNode);
 
-            if (trimmedCommand === 'clear') {
+            const matchedCommand = resolvePrompt(trimmedCommand);
+
+            if (matchedCommand === 'clear') {
                 terminalScreen.innerHTML = '';
-            } else if (trimmedCommand in commandOutputs) {
+            } else if (matchedCommand && matchedCommand in commandOutputs) {
                 const responseNode = document.createElement('div');
                 responseNode.className = 'mt-1 mb-3 text-slate-400 whitespace-pre-wrap';
-                responseNode.innerHTML = commandOutputs[trimmedCommand];
+                responseNode.innerHTML = commandOutputs[matchedCommand];
                 terminalScreen.appendChild(responseNode);
 
-                if (trimmedCommand === 'contact') {
+                if (matchedCommand === 'contact') {
                     copySecureBackupText("fajrlaksono@gmail.com");
                 }
-            } else if (trimmedCommand !== '') {
+            } else {
                 const errorNode = document.createElement('div');
-                errorNode.className = 'mt-1 mb-3 text-rose-500';
-                errorNode.innerHTML = `sys_call: command not found: "${trimmedCommand}". Type <span class="text-techCyan font-semibold font-mono">help</span> for a listing of valid system modules.`;
+                errorNode.className = 'mt-1 mb-3 text-slate-400';
+                errorNode.textContent = "Hmm, I got a little confused. I'm a scripted portfolio guide, so I can only answer questions about Fajar's profile—not other topics. Type help to see the prompts I know.";
                 terminalScreen.appendChild(errorNode);
             }
 
