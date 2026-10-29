@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fajar Laksono — Backend Engineer & AI Platform Engineer. High-scale distributed systems, cloud infrastructure, and AI/ML pipelines.">
+    <title>Fajar Laksono // Backend Engineer & AI Platform Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techDark: '#0B0F19',
+                        techDarkCard: '#111726',
+                        techBlue: '#0066FF',
+                        techCyan: '#00F0FF',
+                        borderMuted: 'rgba(51, 65, 85, 0.4)'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar to match B2B tech styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0066FF;
+        }
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @property --grid-hue { syntax: '<angle>'; inherits: false; initial-value: 210deg; }
+        @property --grid-scan-y { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+        .hero-grid {
+            background-image:
+                linear-gradient(to right,  hsl(var(--grid-hue) 40% 30% / 0.24) 1px, transparent 1px),
+                linear-gradient(to bottom, hsl(var(--grid-hue) 40% 30% / 0.24) 1px, transparent 1px);
+            background-size: 4rem 4rem;
+        }
+        .hero-grid-mask {
+            -webkit-mask-image:
+                radial-gradient(ellipse 80% 120px at 50% var(--grid-scan-y), #000 60%, transparent 100%);
+            mask-image:
+                radial-gradient(ellipse 80% 120px at 50% var(--grid-scan-y), #000 60%, transparent 100%);
+            animation:
+                gridHue       18s ease-in-out infinite,
+                gridScanReveal 12s ease-in-out infinite;
+        }
+        @keyframes gridHue {
+            0%   { --grid-hue: 190deg; }
+            50%  { --grid-hue: 250deg; }
+            100% { --grid-hue: 190deg; }
+        }
+        @keyframes gridScanReveal {
+            0%   { --grid-scan-y: 0%; }
+            100% { --grid-scan-y: 100%; }
+        }
+        .hero-scanline {
+            position: absolute;
+            left: 0; right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, rgba(0,240,255,0.06), rgba(0,102,255,0.04), transparent);
+            pointer-events: none;
+            animation: scanlineSweep 12s ease-in-out infinite;
+        }
+        @keyframes scanlineSweep {
+            0%   { top: -200px; opacity: 0; }
+            10%  { opacity: 1; }
+            90%  { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .animate-gradient {
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 6s ease-in-out infinite;
+        }
+        .profile-metrics .profile-metric {
+            border-color: rgba(51, 65, 85, 0.8);
+            background: rgba(17, 23, 38, 0.72);
+            animation: metric-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+            transition:
+                border-color 220ms ease,
+                background-color 220ms ease,
+                box-shadow 220ms ease,
+                translate 220ms ease;
+        }
+        .profile-metrics .profile-metric:nth-child(2) { animation-delay: 70ms; }
+        .profile-metrics .profile-metric:nth-child(3) { animation-delay: 140ms; }
+        .profile-metrics .profile-metric:nth-child(4) { animation-delay: 210ms; }
+        .profile-metrics .profile-metric:nth-child(5) { animation-delay: 280ms; }
+        .profile-metrics .profile-metric:hover {
+            translate: 0 -3px;
+            border-color: rgba(0, 102, 255, 0.55);
+            background: rgba(17, 23, 38, 0.95);
+            box-shadow: 0 10px 28px rgba(0, 102, 255, 0.09);
+        }
+        .profile-metrics .profile-metric-value {
+            transition: color 220ms ease;
+        }
+        .profile-metrics .profile-metric:hover .profile-metric-value {
+            color: #00F0FF;
+        }
+        @keyframes metric-enter {
+            from {
+                opacity: 0;
+                translate: 0 10px;
+            }
+            to {
+                opacity: 1;
+                translate: 0 0;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .profile-metrics .profile-metric,
+            .profile-metrics .profile-metric-value {
+                animation: none;
+                transition: none;
+            }
+            .profile-metrics .profile-metric:hover {
+                translate: none;
+            }
+        }
+        .certificates-grid .certificate-card,
+        .skills-grid .skill-card {
+            border-color: rgba(51, 65, 85, 0.8);
+            background: rgba(17, 23, 38, 0.62);
+            transition:
+                border-color 220ms ease,
+                background-color 220ms ease,
+                box-shadow 220ms ease,
+                translate 220ms ease;
+        }
+        .certificates-grid .certificate-card:hover,
+        .skills-grid .skill-card:hover {
+            translate: 0 -3px;
+            border-color: rgba(0, 102, 255, 0.55);
+            background: rgba(17, 23, 38, 0.9);
+            box-shadow: 0 12px 30px rgba(0, 102, 255, 0.08);
+        }
+        .certificates-grid .certificate-card.project-card-professional {
+            border-color: transparent;
+            background:
+                linear-gradient(#111726, #111726) padding-box,
+                linear-gradient(to right, #0066FF, #00F0FF, #8a2be2) border-box;
+            background-size: 100% 100%, 300% 100%;
+            background-position: 0 0, 0% 50%;
+            animation: gradientMove 6s ease-in-out infinite;
+            box-shadow: 0 0 18px rgba(0, 102, 255, 0.1);
+        }
+        .certificates-grid .certificate-card.project-card-professional:hover {
+            border-color: transparent;
+            background:
+                linear-gradient(rgba(17, 23, 38, 0.95), rgba(17, 23, 38, 0.95)) padding-box,
+                linear-gradient(to right, #0066FF, #00F0FF, #8a2be2) border-box;
+            background-size: 100% 100%, 300% 100%;
+            background-position: 0 0, 0% 50%;
+            box-shadow: 0 12px 30px rgba(0, 102, 255, 0.16);
+        }
+        .certificate-card {
+            animation: metric-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+        }
+        .certificate-card:nth-child(2) { animation-delay: 100ms; }
+        .skill-card {
+            animation: metric-enter 520ms cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+        }
+        .skill-card:nth-child(2) { animation-delay: 60ms; }
+        .skill-card:nth-child(3) { animation-delay: 120ms; }
+        .skill-card:nth-child(4) { animation-delay: 180ms; }
+        .skill-card:nth-child(5) { animation-delay: 240ms; }
+        .skill-card:nth-child(6) { animation-delay: 300ms; }
+        .skill-card:nth-child(7) { animation-delay: 360ms; }
+        .skill-card:nth-child(8) { animation-delay: 420ms; }
+        .skill-card:nth-child(9) { animation-delay: 480ms; }
+        .skill-chip {
+            border: 1px solid rgba(51, 65, 85, 0.8);
+            border-radius: 0.375rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.35rem 0.6rem;
+            color: #cbd5e1;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            transition:
+                border-color 180ms ease,
+                color 180ms ease,
+                background-color 180ms ease;
+        }
+        .skill-chip:hover {
+            border-color: rgba(0, 240, 255, 0.45);
+            background: rgba(0, 102, 255, 0.1);
+            color: #a5f3fc;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .certificates-grid .certificate-card,
+            .skills-grid .skill-card,
+            .skill-chip {
+                animation: none;
+                transition: none;
+            }
+            .certificates-grid .certificate-card.project-card-professional {
+                animation: none;
+            }
+            .certificates-grid .certificate-card:hover,
+            .skills-grid .skill-card:hover {
+                translate: none;
+            }
+        }
+        #experience {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: rgba(30, 41, 59, 0.8);
+            color: #cbd5e1;
+        }
+        #experience h2,
+        #experience .text-foreground {
+            color: #f8fafc;
+        }
+        #experience .text-muted-foreground {
+            color: #94a3b8;
+        }
+        #experience .text-primary {
+            color: #00F0FF;
+        }
+        #experience [class~="border-border"],
+        #experience [class~="border-border/80"] {
+            border-color: rgba(51, 65, 85, 0.8);
+        }
+        #experience [class~="bg-card"] {
+            background-color: #111726;
+        }
+        #experience [class~="bg-primary/10"] {
+            background-color: rgba(0, 102, 255, 0.1);
+        }
+        #experience .experience-tab-list {
+            display: grid;
+            gap: 0.5rem;
+        }
+        #experience .experience-tab {
+            color: #94a3b8;
+            background: transparent;
+            border-color: transparent;
+            cursor: pointer;
+        }
+        #experience .experience-tab:hover,
+        #experience .experience-tab:focus-visible {
+            color: #e2e8f0;
+            background: rgba(17, 23, 38, 0.8);
+            border-color: rgba(51, 65, 85, 0.8);
+        }
+        #experience .experience-tab.is-active {
+            color: #e2e8f0;
+            background: rgba(0, 102, 255, 0.1);
+            border-color: #0066ff;
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.08);
+        }
+        #experience .experience-tab:focus-visible {
+            outline: 2px solid #00F0FF;
+            outline-offset: 2px;
+        }
+        #experience .experience-logo {
+            display: inline-flex;
+            height: 2.5rem;
+            width: 2.5rem;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            border-radius: 0.5rem;
+            background: rgba(0, 102, 255, 0.1);
+            color: #67e8f9;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        #experience .experience-panel {
+            min-height: 18rem;
+            border: 1px solid rgba(51, 65, 85, 0.8);
+            border-radius: 0.75rem;
+            background: rgba(17, 23, 38, 0.55);
+            padding: 1.5rem;
+        }
+        #experience .experience-period {
+            color: #64748b;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+        #experience .experience-role {
+            margin-top: 0.5rem;
+            color: #f8fafc;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        #experience .experience-company {
+            margin-top: 0.25rem;
+            color: #00F0FF;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        #experience .experience-highlights {
+            margin-top: 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+        #experience .experience-highlights li {
+            position: relative;
+            margin-top: 0.75rem;
+            padding-left: 1.25rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+        #experience .experience-highlights li::before {
+            position: absolute;
+            left: 0;
+            color: #00F0FF;
+            content: ">";
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #experience .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(51, 65, 85, 0.7);
+            padding-top: 1rem;
+        }
+        #experience .experience-skill {
+            border: 1px solid rgba(51, 65, 85, 0.8);
+            border-radius: 0.375rem;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 0.25rem 0.5rem;
+            color: #94a3b8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            #experience .experience-tab {
+                transition: none;
+            }
+        }
+        .is-hidden { display: none !important; }
+    </style>
+</head>
+<body class="selection:bg-techBlue/30 selection:text-white">
+
+    <!-- Sticky Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-techDark/80 border-b border-slate-800/80 transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.3)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Typography-based Logo -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <span class="font-mono text-base tracking-widest text-slate-400 group-hover:text-white transition-colors duration-200">
+                    <span class="text-techBlue font-bold bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient">FAJAR LAKSONO</span>
+                </span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-8 text-base font-medium">
+                <a href="index.html" class="text-slate-400 hover:text-white transition-colors duration-200">Prompt</a>
+                <a href="https://laksonos-note.super.site/" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-200">Blog</a>
+                <a href="project.html" class="text-slate-400 hover:text-white transition-colors duration-200">Projects</a>
+                <a href="about.html" class="text-slate-400 hover:text-white transition-colors duration-200">About</a>
+            </nav>
+
+            <!-- Availability Status Indicator Badge & CTA -->
+            <!-- <div class="flex items-center space-x-4">
+                
+                <a href="#terminal" class="hidden sm:inline-flex items-center space-x-2 bg-techBlue hover:bg-blue-700 text-white text-xs font-mono tracking-wider font-semibold uppercase px-4 py-2 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_25px_rgba(0,102,255,0.4)]">
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                    <span>Contact Me</span>
+                </a>
+            </div> -->
+        </div>
+    </header>
+
+    <!-- The Command Center (Hero Section) -->
+    <section id="hero" class="relative pt-32 pb-24 md:pt-40 md:pb-36 px-4 overflow-hidden border-b border-slate-800/60">
+        <!-- Abstract Tech Grid Lines Overlay -->
+        <div class="absolute inset-0 hero-grid hero-grid-mask pointer-events-none"></div>
+        <!-- Scanline shimmer -->
+        <div class="hero-scanline"></div>
+        
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <!-- Top Capsule Badge -->
+            <div class="inline-flex items-center space-x-2  px-3.5 py-1 rounded-full mb-8 hover:border-slate-700 transition-colors duration-300">
+                <div class="flex items-center space-x-2 bg-slate-900/80 border border-slate-800/80 px-3 py-1.5 rounded-lg text-xs font-mono">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-slate-300">Open to work</span>
+                </div>
+            </div>
+
+            <!-- Main High-Impact Header -->
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                <span class="bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient">
+                    Fajar Laksono
+                </span>
+            </h1>
+
+            <!-- Sub-header -->
+            <p class="max-w-6xl mx-auto text-slate-400 text-base sm:text-lg mb-6 font-sans leading-relaxed text-left">
+                Software Engineer specializing in Backend, Data, and AI infrastructure, with 6+ years of experience building scalable production services and leading cross-functional delivery.
+            </p>
+            <p class="max-w-6xl mx-auto text-slate-400 text-base sm:text-lg mb-6 font-sans leading-relaxed text-left bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient">
+                "Fajar loves learning and trying new things, which is why you'll find plenty of personal projects here. Hope you enjoy exploring!"
+            </p>
+
+            <dl class="profile-metrics mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-4 lg:gap-5">
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Experience</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">6+</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">years</dd>
+                </div>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Professional Projects</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">8</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">Projects</dd>
+                </div>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Personal Projects</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">19</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">Projects</dd>
+                </div>
+                <div class="profile-metric flex min-h-[11rem] flex-col items-center rounded-xl border px-4 py-5 text-center sm:px-5 sm:py-6">
+                    <dt class="flex min-h-10 items-end justify-center px-1 text-[11px] font-medium uppercase leading-snug tracking-wide text-slate-400 sm:text-xs">Actively learning since</dt>
+                    <dd class="profile-metric-value mt-3 text-2xl font-bold tabular-nums tracking-tight text-white">2012</dd>
+                    <dd class="mt-2.5 flex min-h-10 items-center justify-center text-xs leading-relaxed text-slate-400">Since early High School</dd>
+                </div>
+            </dl>
+        </div>
+
+        <!-- Call-to-actions -->
+        <div class="mt-12">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="about.html" class="w-full sm:w-auto bg-techBlue hover:bg-blue-600 text-white font-mono text-sm font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.3)] hover:shadow-[0_0_30px_rgba(0,102,255,0.6)] flex items-center justify-center space-x-2">
+                    <span>See About</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="https://laksonos-note.super.site/" target="_blank" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>See Blog</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="index.html" class="w-full sm:w-auto bg-slate-950/60 hover:bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white font-mono text-sm px-8 py-3.5 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>See Prompt</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Social Medias -->
+        <div class="mt-12">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://github.com/FajarLaksono" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techBlue transition-colors duration-200">
+                    <svg class="h-10 w-10 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M12 .297a12 12 0 0 0-3.79 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.01 0c2.292-1.552 3.299-1.23 3.299-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.221 0 4.61-2.805 5.624-5.476 5.921.43.372.814 1.103.814 2.222v3.294c0 .319.216.694.825.576A12.002 12.002 0 0 0 12 .297Z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techBlue transition-colors duration-200">
+                    <svg class="h-10 w-10 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.859V9h2.955v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                    </svg>
+                </a>
+                <a href="mailto:fajrlaksono@gmail.com" class="inline-flex items-center gap-2 hover:text-techBlue transition-colors duration-200">
+                    <i data-lucide="mail" class="h-10 w-10" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="Projects" class="relative border-t border-border border-b border-slate-800/60 bg-slate-950/30 px-4 py-20 md:py-24 bg-black">
+        <div class="mx-auto max-w-7xl">
+            <div class="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Projects</h2>
+                    <p class="mt-3 max-w-2xl text-slate-400">A selection of professional and personal work across backend engineering, data, and AI.</p>
+                </div>
+                <div class="flex flex-wrap gap-2" role="group" aria-label="Filter projects by type">
+                    <button type="button" class="project-filter rounded-lg border border-techBlue bg-techBlue/10 px-4 py-2 font-mono text-mode font-semibold text-white transition-colors" data-project-filter="all" aria-pressed="true">All projects</button>
+                    <button type="button" class="project-filter rounded-lg border border-slate-700 px-4 py-2 font-mono text-mode font-semibold text-slate-400 transition-colors hover:border-slate-500 hover:text-white bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient" data-project-filter="professional" aria-pressed="false">Professional</button>
+                    <button type="button" class="project-filter rounded-lg border border-slate-700 px-4 py-2 font-mono text-mode font-semibold text-slate-400 transition-colors hover:border-slate-500 hover:text-white" data-project-filter="personal" aria-pressed="false">Personal</button>
+                </div>
+            </div>
+
+            <div id="project-grid" class="certificates-grid grid gap-5 md:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+            <p id="project-empty-state" class="hidden py-12 text-center text-slate-400">No projects match this filter.</p>
+
+            <script>
+                const projects = [
+                    {
+                        coverImage: 'images/projects/Shieldbase.png',
+                        title: 'Shieldbase AI - The AI Operating System',
+                        description: 'An AI-driven platform for intelligent automation and data-informed decisions. As Technical Product Lead, owned product lifecycle alignment across business goals, technical architecture, and delivery.',
+                        date: 'Mar 2025 – Apr 2026',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'Python, Claude AI, Vector PostgreSQL (pgvector), Milvus, GitHub CI/CD, GCP, CrewAI, LangChain, LiteLLM, mem0ai, Ollama, Hugging Face Transformers, Sentence Transformers, MiniLM, AWS, Kubernetes, Docker, Grafana',
+                        url: 'https://shieldbase.ai/'
+                    },
+                    {                       
+                        coverImage: 'images/projects/DocsSearch.png',
+                        title: 'DocsSearch - Explainable RAG Agent with Citation Tracing and Evaluation',
+                        description: 'A local and simple, CPU-friendly document Q&A app for .MD, and .txt files. It builds a retrieval-grounded answer pipeline with citations and a React frontend, without AI cloud APIs.',
+                        date: 'Sep 2026 - Present',
+                        status: 'Active',
+                        type: 'Personal',
+                        tech: 'Python, Streamlite, Ollama, all-minilm, llama3.2:3b.',
+                        url: 'https://github.com/FajarLaksono/DocsSearch'
+                    },
+                    {
+                        coverVideo: 'images/projects/Sopir.mp4',
+                        title: 'DonkeyCar Simulator Drivers Data Platform - AD/ADAS Pipeline and Reinforcement Learning',
+                        description: 'An AD/ADAS data and model distribution platform for generating driving scenarios with Reinfocement learning, model distribution, and vehicle performance metrics.',
+                        date: 'Oct 2026 - Present',
+                        status: 'Active',
+                        type: 'Personal',
+                        tech: 'Python, FastAPI, React, PostgreSQL, DonkeyCar Simulator, Kafka (Redpanda)',
+                        url: 'https://github.com/FajarLaksono/sopir'
+                    },
+                    {
+                        coverImage: 'images/projects/SembadaCloud.png',
+                        title: 'Cloud Resource and Cost Prediction with Machine Learning - Academic Paper',
+                        description: 'A master’s thesis project predicting cloud resource usage and cost with machine learning and deep learning, following CRISP-ML(Q) and CAMS DevOps.',
+                        date: 'Apr 2026 - Aug 2026',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Python, scikit-learn, XGBoost, TensorFlow/Keras, DuckDB, SHAP',
+                        url: 'https://journal.uob.edu.bh/items/1c845c46-363a-424b-9971-681c8dacfa8a'
+                    },                
+                    {
+                        coverImage: 'images/projects/BNPL.png',
+                        title: 'Predictive Modeling of Usage Frequency in Buy Now, Pay Later (BNPL) Services - Data Analysis',
+                        description: 'Hurdle model framework analyzing BNPL adoption, usage intensity, and missed payment risk using the CFPB Making Ends Meet survey (Samples 3-6, Jan 2022 - Jan 2025, ~10K respondents).',
+                        date: 'May 2026 – Jun 2026',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Python, scikit-learn, SHAP',
+                        url: 'https://github.com/FajarLaksono/bnpl-analysis/tree/main'
+                    },
+                    // {
+                    //     title: 'AI-Neuroscience: EEG-Based Parkinson’s Disease Classification',
+                    //     description: 'Classifies Parkinson’s disease from the OpenNeuro ds002778 EEG dataset through signal preprocessing, feature extraction, and model selection.',
+                    //     date: 'March 2026',
+                    //     status: 'Passive',
+                    //     type: 'Personal',
+                    //     tech: 'Python, MNE-Python, Pandas, NumPy, Matplotlib, scikit-learn',
+                    //     url: 'https://github.com/FajarLaksono/ai-neuro-EEG-ds002778-analysis'
+                    // },
+                    {
+                        coverVideo: 'images/projects/Alzheimers.mp4',
+                        title: 'Predicting Alzheimer’s Conversion - Data Analysis',
+                        description: 'Analyzes medical checkup data and evaluates machine learning models to predict Alzheimer’s conversion.',
+                        date: 'Feb 2026 - Mar 2026',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Python, scikit-learn, Logistic Regression, Random Forest, Gradient Boosting, SVM',
+                        url: 'https://github.com/FajarLaksono/analytics/blob/main/20260309-MRI-and-Alzheimers/Notebooks/data-analysis_v1.ipynb'
+                    },
+                    {
+                        coverVideo: 'images/projects/Heart.mp4',
+                        title: 'Heart Disease - Data Analysis',
+                        description: 'Explores health checkup data and compares machine learning models for heart disease analysis.',
+                        date: 'Oct 2025 - Dec 2025',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Python, Pandas, NumPy, Matplotlib, scikit-learn, KNN, Decision Tree',
+                        url: 'https://github.com/FajarLaksono/ABW505-Group-77-Assignment/blob/main/Project-2/Notebooks/heart_disease.ipynb'
+                    },
+                    {
+                        coverImage: 'images/projects/IMDb.png',
+                        title: 'Dirty IMDb Top 1000 Movies Data Cleaning With LLM Gemini',
+                        description: 'Cleans and preprocesses the IMDb Top 1000 movies dataset using Gemini.',
+                        date: 'September 2025',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Python, Gemini',
+                        url: 'https://github.com/FajarLaksono/analytics-dirty-imdb-data/tree/main'
+                    },
+                    {
+                        coverImage: 'images/projects/TaiwanCreditCard.png',
+                        title: 'Taiwanese Credit Card Default - Power BI Dashboard',
+                        description: 'Analyzes Taiwanese credit card data to identify default patterns and risk factors.',
+                        date: 'May 2025',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Power BI',
+                        url: 'https://github.com/FajarLaksono/analytics/tree/main/20250531-taiwanese-credit-card-default-data-analysis'
+                    },
+                    {
+                        coverImage: 'images/projects/LaksonoAPIService.png',
+                        title: 'laksono-api-service',
+                        description: 'A sample Go project demonstrating REST APIs, event-driven workers, and WebSocket services.',
+                        date: 'Jan 2025 - Jan 2025',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Go, Docker, Makefile',
+                        url: 'https://github.com/FajarLaksono/laksono-api-service'
+                    },
+                    {
+                        coverImage: 'images/projects/Eye.png',
+                        title: 'Eye Health - Data Analysis and Machine Learning Models Selection',
+                        description: 'Analyzes eye health and behavioral data, then evaluates a range of machine learning models.',
+                        date: 'February 2024',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Python, Pandas, NumPy, Matplotlib, SHAP, scikit-learn, Decision Trees, Random Forests, Logistic Regression, Naive Bayes, Gradient Boosting, XGBoost, AdaBoost, SVM, KNN',
+                        url: 'https://github.com/FajarLaksono/analytics/blob/main/20250217-sleep-health-and-digital-screen-exposure-dataset/eye-health-analysis.ipynb'
+                    },
+                    {
+                        coverImage: 'images/projects/DataProfession.png',
+                        title: 'Data Profession Survey Analysis - Power BI Dashboard',
+                        description: 'Turns survey responses from 630 data professionals into insights on preferred programming languages, roles, industries, and salaries.',
+                        date: 'January 2024',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Power BI',
+                        url: 'https://github.com/FajarLaksono/analytics/tree/main/20241124-data-professional-survey'
+                    },
+                    {
+                        coverImage: 'images/projects/Fraud.png',
+                        title: 'Card and Fraud Transaction Data Analysis - Power BI Dashboard',
+                        description: 'Analyzes card transaction data and applies machine learning to identify fraudulent transactions.',
+                        date: 'January 2024',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Power BI, Python, scikit-learn, RandomForestClassifier, Pandas, Matplotlib',
+                        url: 'https://github.com/FajarLaksono/analytics/tree/main/20241212-financial-transactions-analysis-and-prediction'
+                    },
+                    {
+                        coverImage: 'images/projects/Belajarcpp.png',
+                        title: 'belajarcpp.com - Learning C/C++ Blog',
+                        description: 'An Indonesian-language website for learning C++ programming.',
+                        date: 'Jan 2016 – Dec 2020',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'PHP, WordPress, JavaScript',
+                        url: 'https://www.belajarcpp.com/'
+                    },
+                    {
+                        coverVideo: 'images/projects/The Dimensions Demo Game Trailer.mp4',
+                        title: 'The Dimension Game',
+                        description: 'A 3D horror game developed as a high-school competition project.',
+                        date: '2012–2014',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'Unity, Blender',
+                        url: 'https://www.indiedb.com/games/the-dimensions-game'
+                    },
+                    {
+                        coverImage: 'images/projects/Topsis.png',
+                        title: 'Topsis',
+                        description: 'A decision support system using the TOPSIS method.',
+                        date: '2016',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'PHP',
+                        url: 'https://github.com/FajarLaksono/topsis'
+                    },
+                    {
+                        coverImage: 'images/projects/ExpertSystem.png',
+                        title: 'Expert System Forward Chaining VB6',
+                        description: 'An expert system for diagnosing hardware failures using forward chaining.',
+                        date: '2016',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'VB6',
+                        url: 'https://github.com/FajarLaksono/sistem-pakar-diagnosis-kerusakan-vb6'
+                    },
+                    {
+                        coverImage: 'images/projects/DecisionSupport.png',
+                        title: 'Decision Support System VB.Net',
+                        description: 'A decision support system using the AHP method.',
+                        date: '2016',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'VB.Net',
+                        url: 'https://github.com/FajarLaksono/spk-ahp-vb.net'
+                    },
+                    {
+                        coverImage: 'images/projects/CarRental.jpg',
+                        title: 'Car Rental-VB6',
+                        description: 'A car rental management system.',
+                        date: '2016',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'VB6',
+                        url: 'https://github.com/FajarLaksono/RentalMobil-VB6'
+                    },
+                    {
+                        coverImage: 'images/projects/MoneyLending.png',
+                        title: 'Money Lending-VB6',
+                        description: 'A money lending management system.',
+                        date: '2016',
+                        status: 'Passive',
+                        type: 'Personal',
+                        tech: 'VB6',
+                        url: 'https://github.com/FajarLaksono/PeminjamanUang-VB6'
+                    },
+                    {
+                        coverImage: 'images/projects/AIS.jpg',
+                        title: 'AccelByte Intelligence Service',
+                        description: 'A game analytics and insights data ecosystem, with contributions spanning data pipeline management, customer analysis, and R&D.',
+                        date: 'Nov 2023 – Jan 2025',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'Python, Java, MongoDB, PostgreSQL, AWS, Docker, Kubernetes, Kafka, Redis, Elasticsearch, Grafana, Power BI',
+                        url: 'https://accelbyte.io/intelligence-service'
+                    },
+                    {
+                        coverImage: 'images/projects/ADT.jpg',
+                        title: 'AccelByte Development Toolkit',
+                        description: 'An ecosystem supporting game development workflows and backend services, including ownership of 10+ backend services and two CLI/SDK applications.',
+                        date: 'Mar 2021– Dec 2024',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'Go, Java (Spring Boot), C++, PostgreSQL, MongoDB, AWS, Docker, Kubernetes, Kafka, Redis, Elasticsearch, Grafana',
+                        url: 'https://accelbyte.io/accelbyte-development-toolkit'
+                    },
+                    {
+                        coverImage: 'images/projects/APT.png',
+                        title: 'AccelByte Publishing Toolkits',
+                        description: 'A backend ecosystem supporting game publishing workflows, including feature development, system improvements, and customer-facing support.',
+                        date: 'Jun 2022– Dec 2024',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'Java, Go, MongoDB, PostgreSQL, AWS, Docker, Kubernetes, Kafka, Redis, Elasticsearch',
+                        url: 'https://accelbyte.io/distribution/'
+                    },
+                    // {
+                    //     title: 'AccelByte CDN & Storage Cost Optimization (R&D)',
+                    //     description: 'Researched and integrated alternative CDN and storage providers, achieving approximately 40% lower costs across multiple company products.',
+                    //     date: '2022',
+                    //     status: 'Passive',
+                    //     type: 'Professional',
+                    //     tech: 'Go, Java, Amazon S3, Backblaze B2, Akamai, Bunny.net, CDN77, CloudFront',
+                    //     url: 'https://accelbyte.io/'
+                    // },
+                    {
+                        coverVideo: 'images/projects/Agate.mp4',
+                        title: 'LevelUp Game Projects - Agate Gamification',
+                        description: 'A gamification project with backend services and an internal admin portal for game operations.',
+                        date: 'Sep 2020 – Apr 2021',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'C# (.NET), React.js',
+                        url: 'https://agatelevelup.com/'
+                    },
+                    {
+                        coverImage: 'images/projects/Kejaksaan.png',
+                        title: 'The Attorney General of Indonesia – Management System',
+                        description: 'A government management system delivered for the Office of the Attorney General of Indonesia.',
+                        date: '2019–2020',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'PHP (Laravel), Bootstrap',
+                        url: 'https://www.kejaksaan.go.id/'
+                    },
+                    {
+                        coverImage: 'images/projects/Freelance.jpg',
+                        title: 'Freelance Web Development Projects',
+                        description: 'Websites for small businesses, built during university to support their online presence and basic operations.',
+                        date: 'Jan 2016 – Dec 2019',
+                        status: 'Passive',
+                        type: 'Professional',
+                        tech: 'PHP, Laravel, CodeIgniter, WordPress',
+                        url: '#'
+                    }
+                ];
+
+                const projectGrid = document.getElementById('project-grid');
+                const projectEmptyState = document.getElementById('project-empty-state');
+                const projectFilters = document.querySelectorAll('[data-project-filter]');
+
+                function getLatestProjectYear(project) {
+                    const years = project.date.match(/\b(?:19|20)\d{2}\b/g);
+                    return years ? Math.max(...years.map(Number)) : 0;
+                }
+
+                function renderProjects(filter) {
+                    const visibleProjects = projects
+                        .filter(project => filter === 'all' || project.type.toLowerCase() === filter)
+                        .sort((a, b) =>
+                            getLatestProjectYear(b) - getLatestProjectYear(a)
+                            || Number(b.type === 'Professional') - Number(a.type === 'Professional')
+                        );
+                    let currentYear = null;
+                    projectGrid.innerHTML = visibleProjects.map(project => {
+                        const year = getLatestProjectYear(project);
+                        const yearDivider = year !== currentYear ? `
+                            <div class="col-span-full flex items-center space-x-3 mb-8">
+                                <span class="h-px flex-1 bg-gradient-to-r from-techBlue/60 to-transparent"></span>
+                                <span class="text-mode font-mono tracking-widest text-techCyan uppercase">${year}</span>
+                                <span class="h-px flex-1 bg-gradient-to-l from-techBlue/60 to-transparent"></span>
+                            </div>
+                        ` : '';
+                        currentYear = year;
+                        return `${yearDivider}
+                        <article class="certificate-card ${project.type === 'Professional' ? 'project-card-professional' : ''} flex flex-col overflow-hidden rounded-xl border">
+                            <div class="flex aspect-[16/9] items-center justify-center overflow-hidden border-b border-slate-800/80 bg-slate-950/60 font-mono text-xs uppercase tracking-wider text-slate-500">
+                                ${project.coverVideo
+                                    ? `<video src="${project.coverVideo}"${project.coverImage ? ` poster="${project.coverImage}"` : ''} class="h-full w-full object-cover" autoplay muted loop playsinline preload="metadata" aria-label="${project.title} project cover video"></video>`
+                                    : project.coverImage
+                                    ? `<img src="${project.coverImage}" alt="${project.title} project cover" class="h-full w-full object-cover" loading="lazy">`
+                                    : `<span role="img" aria-label="Cover image placeholder for ${project.title}">Cover image</span>`}
+                            </div>
+                            <div class="flex flex-1 flex-col p-6 sm:p-7">
+                                <div class="mb-4 flex flex-wrap items-center gap-2">
+                                    <span class="rounded-md border ${project.status === 'Active' ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300' : 'border-slate-600/50 bg-slate-700/20 text-slate-400'} px-2 py-1 font-mono text-[10px] uppercase tracking-wider">${project.status}</span>
+                                    <span class="rounded-md border px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider ${project.type === 'Professional' ? 'border-transparent bg-gradient-to-r from-techBlue via-techCyan to-[#8a2be2] animate-gradient text-white' : 'border-techCyan/30 bg-techCyan/10 text-techCyan'}">${project.type}</span>
+                                    <span class="ml-auto font-mono text-[11px] text-slate-500">${project.date}</span>
+                                </div>
+                                <h3 class="text-lg font-semibold leading-snug text-white">${project.title}</h3>
+                                <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-400">${project.description}</p>
+                                <div class="mt-5 border-t border-slate-800/80 pt-4">
+                                    <p class="mb-3 font-mono text-[10px] uppercase tracking-wider text-slate-500">Tech stack</p>
+                                    <p class="text-xs leading-relaxed text-slate-300">${project.tech}</p>
+                                </div>
+                                <a href="${project.url}" target="${project.url.startsWith('http') ? '_blank' : '_self'}" ${project.url.startsWith('http') ? 'rel="noopener noreferrer"' : ''} class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-techBlue/50 bg-techBlue/10 px-4 py-2.5 font-mono text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-techCyan/50 hover:bg-techBlue/20">
+                                    ${project.url.startsWith('http') ? 'View project' : 'More details'}
+                                    <i data-lucide="arrow-up-right" class="h-4 w-4" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                    }).join('');
+                    projectEmptyState.classList.toggle('hidden', visibleProjects.length > 0);
+                    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                        window.lucide.createIcons();
+                    }
+                }
+
+                projectFilters.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filter = button.dataset.projectFilter;
+                        projectFilters.forEach(filterButton => {
+                            const isSelected = filterButton === button;
+                            filterButton.setAttribute('aria-pressed', String(isSelected));
+                            filterButton.classList.toggle('border-techBlue', isSelected);
+                            filterButton.classList.toggle('bg-techBlue/10', isSelected);
+                            filterButton.classList.toggle('text-white', isSelected);
+                            filterButton.classList.toggle('border-slate-700', !isSelected);
+                            filterButton.classList.toggle('text-slate-400', !isSelected);
+                        });
+                        renderProjects(filter);
+                    });
+                });
+
+                renderProjects('all');
+            </script>
+        </div>
+    </section>
+
+    <!-- Global High-Tech Footer -->
+    <footer class="bg-techDark border-t border-slate-800/80 py-12 px-4 relative z-10 text-xs font-mono text-slate-500">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-6">
+                <div class="flex items-center space-x-2">
+                    <span class="text-techBlue font-bold">//</span>
+                    <span>FAJAR.LAKSONO.AI // VERSION 9.9.9-STABLE</span>
+                </div>
+                <div class="flex flex-wrap justify-center space-x-6">
+                    <a href="https://github.com/FajarLaksono" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techCyan transition-colors duration-200">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M12 .297a12 12 0 0 0-3.79 23.385c.6.111.82-.261.82-.577v-2.234c-3.338.726-4.043-1.416-4.043-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.01 0c2.292-1.552 3.299-1.23 3.299-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.221 0 4.61-2.805 5.624-5.476 5.921.43.372.814 1.103.814 2.222v3.294c0 .319.216.694.825.576A12.002 12.002 0 0 0 12 .297Z"></path>
+                        </svg><span>GITHUB</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fajrlaksono/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-techCyan transition-colors duration-200">
+                        <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.859V9h2.955v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                        </svg><span>LINKEDIN</span>
+                    </a>
+                    <a href="mailto:fajrlaksono@gmail.com" class="inline-flex items-center gap-2 hover:text-techCyan transition-colors duration-200">
+                        <i data-lucide="mail" class="h-4 w-4" aria-hidden="true"></i><span>EMAIL</span>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div>Jakarta, Indonesia &middot; Penang, Malaysia</div>
+                <div>&copy; 2026 Fajar Laksono. All system capabilities verified.</div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        } else {
+            console.error('Lucide icons could not be initialized because the library did not load.');
+        }
+    </script>
+</body>
+</html>
